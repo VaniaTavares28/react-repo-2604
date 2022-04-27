@@ -1,0 +1,41 @@
+@import "../../assets/scss/variables.scss";
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: $color_oxford_blue;
+  .header-bottom, .header-top ul {
+    list-style: none;
+  }
+  
+  .header-top {
+    display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      h1 {
+        font: 400 normal 32px/39px serif;
+        letter-spacing: 1.6px;
+      }
+    ul {
+      width: 25%;
+      font: $body_font_3;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inherit;
+      flex-direction: inherit;
+      justify-content: inherit;
+      align-items: center;
+        }
+  }
+  .header-bottom {
+      display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+  }
+}
