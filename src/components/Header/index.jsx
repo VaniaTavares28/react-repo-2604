@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Header = () => {
   return (
-    <div className='header-container'>
+    <>
       <div className='header-top'>
       <ul>
         <li>About</li>
@@ -23,7 +23,7 @@ const Header = () => {
       <li>Psoriasis</li>
       <li>Vitiligio</li>
       </ul>
-    </div>
+    </>
   )
 }
 
