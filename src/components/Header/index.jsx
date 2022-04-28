@@ -2,16 +2,17 @@ import React from 'react';
 import "./style.scss";
 
 const Header = () => {
+  // ask about icon
   return (
-    <div className='navigation'>
+    <div className='navigation-wrapper'>
       <nav className='navigation-top'>
       <ul>
         <li>About</li>
         <li>Consultation</li>
         </ul>
-        <h1>sooth</h1>
+        <h2>sooth</h2>
         <ul>
-        <li>OQ</li>
+        <li>Q</li>
         <li>Cart</li>
         <li>Login</li>
         </ul>
