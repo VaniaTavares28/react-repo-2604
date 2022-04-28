@@ -1,9 +1,7 @@
 import React from 'react';
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
+import { Banner, Header, LandingContent } from '../../components';
 import HeaderContainer from '../../components/layout/containers/HeaderContainer';
-import Banner from "../../components/Banner"
-import LandingContent from '../../components/LandingContent';
-
 
 const content = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?"
 const Home = () => {
