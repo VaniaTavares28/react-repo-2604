@@ -1,0 +1,19 @@
+@import "../../assets/scss/variables.scss";
+
+.landing {
+  padding: 20.33px 53px 0 53px;
+  height: 100%;
+
+  .landing-content {
+    h1 {
+      font: $heading_font_1;
+    }
+    p {
+      font: $body_font_1_high;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+}
