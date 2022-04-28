@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../../components/Header';
-import "./style.scss"
+import HeaderContainer from '../../components/layout/containers/HeaderContainer';
 
 const Home = () => {
   return (
-    <div className="home-container">
-      <Header/>
-    </div>
+    <>
+    <HeaderContainer>
+      <div>Home</div>
+      </HeaderContainer>
+    </>
   )
 }
 
