@@ -17,7 +17,8 @@ align-items: center;
       width: 100%;
 
       h1 {
-        font: 400 normal 32px/39px serif;
+        color: #293D45;
+        font: $heading_somantic;
         letter-spacing: 2 * $letter_space_basic;
       }
 
