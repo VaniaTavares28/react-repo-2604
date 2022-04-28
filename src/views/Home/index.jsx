@@ -1,7 +1,5 @@
-import React from 'react';
-import Header from '../../components/Header';
-import HeaderContainer from '../../components/layout/containers/HeaderContainer';
-import Banner from "../../components/Banner"
+import React from 'react'
+import { Banner, Header, HeaderContainer } from '../../components'
 
 const Home = () => {
   return (
