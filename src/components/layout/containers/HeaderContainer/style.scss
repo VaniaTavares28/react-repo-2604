@@ -1,12 +1,9 @@
 @import "../../../../assets/scss/variables.scss";
 
 .header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   color: $color_oxford_blue;
   background-color: $color_athens_gray;
   width: 100vw;
-  padding: 44px 85px 1px 85px;
+  height: 762px;
+  padding: 44px 85px 0 85px;
 }
