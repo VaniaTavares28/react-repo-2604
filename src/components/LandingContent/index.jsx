@@ -2,7 +2,7 @@ import React from 'react'
 import HighlightBanner from '../HighlightBanner'
 import "./style.scss"
 
-const LandingContent = ({title, content, highlight, image}) => {
+const LandingContent = ({title, content, highlight}) => {
   return (
     <div className='landing'>
     <div className='landing-content'>
@@ -10,7 +10,7 @@ const LandingContent = ({title, content, highlight, image}) => {
     <h1>All Natural <br/>{title}</h1>
     <p>{content}</p>
     </div>
-    {!!image && <div className="image-container"></div>}
+    <div className="image-container"/>
     </div>
   )
 }
