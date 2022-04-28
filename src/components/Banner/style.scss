@@ -1,12 +1,13 @@
 @import "../../assets/scss/variables.scss";
 
-.banner {
+.banner-wrapper {
   width: 100vw;
-  min-height: 20px;
+  height: 40px;
   color: $color_beige;
   background-color: $color_cape_brown;
   text-align: center;
-  font: $body_font_1;
-  font-weight: 500;
-  padding: 10px 0;
+  h4 {
+    font: $body_font_1_500;
+    color: inherit;
+  }
 }
