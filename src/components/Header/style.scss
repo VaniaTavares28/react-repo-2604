@@ -1,11 +1,5 @@
 @import "../../assets/scss/variables.scss";
 
-.header-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: $color_oxford_blue;
   .header-bottom, .header-top ul {
     list-style: none;
     }
@@ -19,7 +13,7 @@
 
       h1 {
         font: 400 normal 32px/39px serif;
-        letter-spacing: 1.6px;
+        letter-spacing: 2 * $letter_space_basic;
       }
 
       ul {
@@ -39,5 +33,6 @@
         justify-content: space-between;
         align-items: center;
         width: 50%;
+        padding-top: 28px;
+        letter-spacing: $letter_space_basic;
   }
-}

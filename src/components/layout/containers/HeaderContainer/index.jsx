@@ -1,10 +1,11 @@
-import React from 'react';
-import "./style.scss"
+import React from 'react'
+import Header from '../../../Header'
+import "./style.scss";
 
-const HeaderContainer = ({children}) => {
+const HeaderContainer = () => {
   return (
-    <div className='main-container'>
-      {children}
+    <div className='header-container'>
+      <Header/>
     </div>
   )
 }
