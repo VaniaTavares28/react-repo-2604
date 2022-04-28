@@ -1,0 +1,20 @@
+@import "../../assets/scss/variables.scss";
+
+/*need to add mixins */
+.section-title-wrapper {
+  padding: 43px 0 12px 0;
+  text-align: center;
+  color: $color_oxford_blue;
+  h3 {
+    font: $heading_font_4;
+  }
+  p: {
+    font: $body_font_1_high;
+  }
+  .border-low {
+    border: 1px solid $color_como_green;
+    p: {
+      font: $body_font_1;
+    }
+  }
+}
