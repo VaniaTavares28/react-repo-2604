@@ -7,7 +7,7 @@ const LandingContent = ({title, content, highlight}) => {
     <div className='landing'>
     <div className='landing-content'>
       {!!highlight && <HighlightBanner text="New!" color="dark-blue"/>}
-    <h1>All Natural <br/>{title}</h1>
+    <h2>All Natural <br/>{title}</h2>
     <p>{content}</p>
     </div>
     <div className="image-container"/>
