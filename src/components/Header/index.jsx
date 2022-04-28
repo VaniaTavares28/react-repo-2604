@@ -1,4 +1,5 @@
 import React from 'react';
+import { images } from '../../assets/images';
 import "./style.scss";
 
 const Header = () => {
@@ -7,15 +8,19 @@ const Header = () => {
     <div className='navigation-wrapper'>
       <nav className='navigation-top'>
       <ul>
-        <li>About</li>
-        <li>Consultation</li>
+        <li><a href='.'>About</a></li>
+        <li><a href='.'>Consultation</a></li>
         </ul>
         <h2>sooth</h2>
+        <div className="navigation-right">
+          <div className="navigation-image-container">
+            <img className="navigation-image" src={images.magnifying} alt="magnifying"/>
+            </div>
         <ul>
-        <li>Q</li>
-        <li>Cart</li>
-        <li>Login</li>
+        <li><a href='.'>Cart</a></li>
+        <li><a href='.'>Login</a></li>
         </ul>
+        </div>
       </nav>
       <ul className='navigation-bottom'>
       <li>Acne</li>
