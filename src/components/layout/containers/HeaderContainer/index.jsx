@@ -1,11 +1,10 @@
 import React from 'react'
-import Header from '../../../Header'
 import "./style.scss";
 
-const HeaderContainer = () => {
+const HeaderContainer = ({children}) => {
   return (
     <div className='header-container'>
-      <Header/>
+      {children}
     </div>
   )
 }

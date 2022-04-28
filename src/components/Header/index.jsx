@@ -3,8 +3,8 @@ import "./style.scss";
 
 const Header = () => {
   return (
-    <>
-      <div className='header-top'>
+    <div className='navigation'>
+      <nav className='navigation-top'>
       <ul>
         <li>About</li>
         <li>Consultation</li>
@@ -15,15 +15,15 @@ const Header = () => {
         <li>Cart</li>
         <li>Login</li>
         </ul>
-      </div>
-      <ul className='header-bottom'>
+      </nav>
+      <ul className='navigation-bottom'>
       <li>Acne</li>
       <li>Sun</li>
       <li>Ezcema</li>
       <li>Psoriasis</li>
       <li>Vitiligio</li>
       </ul>
-    </>
+    </div>
   )
 }
 

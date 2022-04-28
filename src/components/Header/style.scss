@@ -1,10 +1,15 @@
 @import "../../assets/scss/variables.scss";
 
-  .header-bottom, .header-top ul {
+.navigation {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+  .navigation-bottom, .navigation-top ul {
     list-style: none;
     }
   
-  .header-top {
+  .navigation-top {
     display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -12,12 +17,13 @@
       width: 100%;
 
       h1 {
-        font: 400 normal 32px/39px serif;
+        color: #293D45;
+        font: $heading_somantic;
         letter-spacing: 2 * $letter_space_basic;
       }
 
       ul {
-      width: 25%;
+      width: 20%;
       font: $body_font_3;
       font-weight: 600;
       text-transform: uppercase;
@@ -27,12 +33,14 @@
       align-items: center;
         }
     }
-  .header-bottom {
+  .navigation-bottom {
       display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         width: 50%;
         padding-top: 28px;
+        padding-bottom: 1px;
         letter-spacing: $letter_space_basic;
   }
+}
