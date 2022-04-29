@@ -45,7 +45,8 @@ export const cardImages = [
     id: "img006",
     source: ezcemaCreamSpecial,
     overlay: applyCream,
-    caption: "Ezcema Cream"
+    caption: "Ezcema Cream",
+    special: true
   },
   {
     id: "img005",

@@ -14,16 +14,15 @@ return (<div className={`card-wrapper ${size}`}>
   <h4>{caption}</h4>
   <p>{content ? placeholder: "All Natural Ingredients"}</p>
   <div className="extras-container">{content ? <p className="card-extra-bold">Read</p> : type === 'discount' ? <p className='card-extra-discount'>{`$${(0.85 * 24.99).toFixed(2)}`}</p> : ""} <p>$24.99</p></div>
-  {content ? "" :  <Button buttonContent="Add to Cart" buttonType="no-fill"/>}
+  {content ? "" :  <Button buttonContent="Add to Cart" buttonType="icon-no-fill"/>}
 </div>)
 }
 
-const Cards = ({cardsText, size}) => {
+const Cards = ({ size, filter}) => {
   return (
     <>
-    <div className='cards-header'><h4>{cardsText}</h4> <h4>Shop all products</h4></div>
     <div className="cards-container">
-      {cardImages.filter(card => card.hasOwnProperty("overlay")).slice(0,4).map(card => <Card key={card.id} card={card} size={size}/>)}
+      {(filter ? cardImages.filter(filter) :  cardImages).slice(0,4).map(card => <Card key={card.id} card={card} size={size}/>)}
     </div>
     </>
   )

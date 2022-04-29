@@ -31,8 +31,3 @@
   background-color: $bg-color;
   border: 1px solid $border-color;
 }
-
-@mixin card-settings($width, $height) {
-width: $width;
-height: $height;
-}
