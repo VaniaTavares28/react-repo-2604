@@ -8,8 +8,8 @@ const Home = () => {
     <Banner/>
     <HeaderContainer>
       <Header/>
-      <LandingContent highlight={true} title="Skin Remedies." content={content} />
-    </HeaderContainer>
+      <LandingContent button={true} highlight={true} title="Skin Remedies." content={content} />
+       </HeaderContainer>
     <SectionTitle borderLow="border-low" title="Solutions for all skin" content="Explore our innovative skincare products"/>
     </>
   )

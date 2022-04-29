@@ -20,3 +20,14 @@
   align-items: $align;
   flex-direction: $direction;
 }
+
+@mixin custom-buttons($width, $height, $color, $bg-color, $border-color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+  color: $color;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+}
