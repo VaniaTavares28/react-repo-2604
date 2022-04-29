@@ -1,5 +1,6 @@
 import React from 'react';
 import { images } from '../../assets/images';
+import { subMenu } from '../../helpers/constants';
 import "./style.scss";
 
 const Header = () => {
@@ -23,11 +24,7 @@ const Header = () => {
         </div>
       </nav>
       <ul className='navigation-bottom'>
-      <li>Acne</li>
-      <li>Sun</li>
-      <li>Ezcema</li>
-      <li>Psoriasis</li>
-      <li>Vitiligio</li>
+      {subMenu.map(sub => <li key={sub.id}>{sub.title}</li>)}
       </ul>
     </div>
   )
