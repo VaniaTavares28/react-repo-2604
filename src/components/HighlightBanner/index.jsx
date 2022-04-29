@@ -3,17 +3,18 @@ import "./style.scss"
 
 const stylingTypes ={
   new: {
-    style: "oxford-blue",
+    style: "oxford_blue",
     text: "New!"
   },
   discount: {
-    style: "brown",
+    style: "cape_brown",
     text: "15% off"
   },
 }
-const HighlightBanner = ({type}) => {
+
+const HighlightBanner = ({type, absolute}) => {
   return (
-    <div className={`card-banner ${stylingTypes[type].style}`}>
+    <div className={`card-banner-${stylingTypes[type].style} ${absolute ? "hightlight-absolute" : ""}`}>
       {stylingTypes[type].text}
     </div>
   )

@@ -3,7 +3,7 @@ import magnifying from "./glass.png";
 import homeFlask from './home-image.png'
 
 import acneCreamBottom from './Cream-2.png';
-import brownBalm from "./person-holding-a-hand-cream-3059398 (1).png";
+import orangeBalm from "./person-holding-a-hand-cream-3059398 (1).png";
 import vitiligioSolution from "./vitiligio-9.png";
 import upperLeftFace from './linh-ha-nt-2.png';
 import ezcemaCreamSpecial from './special-ezcema.png';
@@ -13,7 +13,8 @@ import ezcemaCream from './ezcema-9.png';
 import psoriasisCream from './psoriasis_treatment-4.png';
 import vitBalm from './vitiglio_treatment-4.png';
 import bigAcneCream from './acne_Cream.png';
-import ezcemaOil from './ezema_dropper-11.png'
+import ezcemaOil from './ezema_dropper-11.png';
+import applyBlueCream from './person-pouring-plastic-tube-bottle-1.png'
 
 export const images = {
 instagram,
@@ -25,7 +26,7 @@ export const cardImages = [
   {
     id: "img001",
     source: acneCreamBottom,
-    overlay: brownBalm,
+    overlay: orangeBalm,
     caption: "Acne Cream"
   },
   {
@@ -37,41 +38,41 @@ export const cardImages = [
   },
   {
     id: "img003",
-    source: sunOintment,
-    overlay: brownBalm,
-    caption: "Sunburn Ointment",
-    type: "discount"
-  },
-  {
-    id: "img004",
     source: ezcemaCream,
     caption: "Ezcema Cream",
   },
   {
+    id: "img006",
+    source: ezcemaCreamSpecial,
+    overlay: applyCream,
+    caption: "Ezcema Cream"
+  },
+  {
     id: "img005",
+    source: sunOintment,
+    overlay: applyBlueCream,
+    caption: "Sunburn Ointment",
+    type: "discount"
+  },
+  {
+    id: "img006",
     source: psoriasisCream,
     overlay: upperLeftFace,
     caption: "Psoriasis Cream"
   },
   {
-    id: "img006",
+    id: "img007",
     source: vitBalm,
     caption: "Vitiligio Balm"
   },
   {
-    id: "img007",
+    id: "img008",
     source: bigAcneCream,
     caption: "Acne Cream"
   },
   {
-    id: "img008",
+    id: "img009",
     source: ezcemaOil,
     caption: "Ezcema Oil"
-  },
-  {
-    id: "img009",
-    source: ezcemaCreamSpecial,
-    overlay: applyCream,
-    caption: "Ezcema Cream"
   },
 ]

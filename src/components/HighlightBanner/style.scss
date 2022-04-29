@@ -1,18 +1,20 @@
 @import "../../assets/scss/variables.scss";
 
-.card-banner {
-  width: 50px;
+@each $name, $color in $highlight_banner {
+  .card-banner-#{$name} {
+    width: 50px;
   height: 28px;
   background-color: $color_alabaster;
   text-align: center;
   padding: 8px 0;
   font: $body_font_3;
-  
-  .oxford-blue {
-    color: $color_oxford_blue
+  color: $color;
   }
+}
 
-  .brown {
-    color: $color_cape_brown
-  }
+.hightlight-absolute {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  z-index: 10;
 }
