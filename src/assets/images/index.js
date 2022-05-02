@@ -1,7 +1,9 @@
 import instagram from "./001-instagram-2.png"
 import magnifying from "./glass.png";
 import homeFlask from './home-image.png';
-import baseHome from './updated_Header-1.png'
+import baseHome from './updated_Header-1.png';
+import manInBlue from './man-flower.png';
+import armWithTattoo from './sincerely-media-CjHJbp-1.png'
 
 import acneCreamBottom from './Cream-2.png';
 import orangeBalm from "./person-holding-a-hand-cream-3059398 (1).png";
@@ -21,20 +23,22 @@ export const images = {
 instagram,
 magnifying,
 homeFlask,
-baseHome
+baseHome,
+manInBlue,
+armWithTattoo
 }
 
 export const cardImages = [
   {
     id: "img001",
-    source: acneCreamBottom,
+    image: acneCreamBottom,
     overlay: orangeBalm,
     title: "Acne Cream",
     category: ["most popular"]
   },
   {
     id: "img002",
-    source: vitiligioSolution,
+    image: vitiligioSolution,
     overlay: upperLeftFace,
     title: "Vitiligio Solution",
     type: "new",
@@ -43,20 +47,20 @@ export const cardImages = [
   },
   {
     id: "img003",
-    source: ezcemaCream,
+    image: ezcemaCream,
     title: "Ezcema Cream",
     category: ["most popular"]
   },
   {
     id: "img006",
-    source: ezcemaCreamSpecial,
+    image: ezcemaCreamSpecial,
     overlay: applyCream,
     title: "Ezcema Cream",
     category: ["most popular", "special"]
   },
   {
     id: "img005",
-    source: sunOintment,
+    image: sunOintment,
     overlay: applyBlueCream,
     title: "Sunburn Ointment",
     text: "15% off",
@@ -65,25 +69,25 @@ export const cardImages = [
   },
   {
     id: "img006",
-    source: psoriasisCream,
+    image: psoriasisCream,
     title: "Psoriasis Cream",
     category: ["all"]
   },
   {
     id: "img007",
-    source: vitBalm,
+    image: vitBalm,
     title: "Vitiligio Balm",
     category: ["regular"]
   },
   {
     id: "img008",
-    source: bigAcneCream,
+    image: bigAcneCream,
     title: "Acne Cream",
     category: ["regular"]
   },
   {
     id: "img009",
-    source: ezcemaOil,
+    image: ezcemaOil,
     title: "Ezcema Oil",
     category: ["regular"]
   },

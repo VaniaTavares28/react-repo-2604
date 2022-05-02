@@ -12,16 +12,25 @@
     width: 251px;
     height: 462px;
   }
+  .xl {
+    width: 251px;
+    height: 660px;
+  }
   .card-wrapper {
     position: relative;
     color: $color_rangitoto_black;
+    @include flex-settings(column, space-between, flex-start);
 
     h4 {
       padding-top: 14px;
-      font: $heading_font_6
+      font: $heading_font_6;
     }
     p {
-      font: $body_font_3_high
+      font: $body_font_3_high;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
     }
     img {
       width: 100%;
@@ -42,7 +51,7 @@
     }
     .extras-container {
       @include flex-settings(row, flex-start, center);
-      padding: 12px 0;
+      padding-top: 12px;
       .card-extra-bold {
         font: $heading_font_6;
         text-decoration: underline;
@@ -55,6 +64,14 @@
         text-decoration: line-through;
         padding-inline-start: 7px;
         }
+      }
+    }
+    .rating-container {
+      @include flex-settings(row, flex-start, center);
+      padding-bottom: 6px;
+      p {
+        font-weight: 700;
+        padding-inline-end: 10px;
       }
     }
   }
