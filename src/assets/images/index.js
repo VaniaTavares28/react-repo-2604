@@ -29,14 +29,14 @@ export const cardImages = [
     id: "img001",
     source: acneCreamBottom,
     overlay: orangeBalm,
-    caption: "Acne Cream",
+    title: "Acne Cream",
     category: ["most popular"]
   },
   {
     id: "img002",
     source: vitiligioSolution,
     overlay: upperLeftFace,
-    caption: "Vitiligio Solution",
+    title: "Vitiligio Solution",
     type: "new",
     text: "New!",
     category: ["most popular"]
@@ -44,21 +44,21 @@ export const cardImages = [
   {
     id: "img003",
     source: ezcemaCream,
-    caption: "Ezcema Cream",
+    title: "Ezcema Cream",
     category: ["most popular"]
   },
   {
     id: "img006",
     source: ezcemaCreamSpecial,
     overlay: applyCream,
-    caption: "Ezcema Cream",
+    title: "Ezcema Cream",
     category: ["most popular", "special"]
   },
   {
     id: "img005",
     source: sunOintment,
     overlay: applyBlueCream,
-    caption: "Sunburn Ointment",
+    title: "Sunburn Ointment",
     text: "15% off",
     type: "discount",
     category: ["all"]
@@ -66,25 +66,25 @@ export const cardImages = [
   {
     id: "img006",
     source: psoriasisCream,
-    caption: "Psoriasis Cream",
+    title: "Psoriasis Cream",
     category: ["all"]
   },
   {
     id: "img007",
     source: vitBalm,
-    caption: "Vitiligio Balm",
+    title: "Vitiligio Balm",
     category: ["regular"]
   },
   {
     id: "img008",
     source: bigAcneCream,
-    caption: "Acne Cream",
+    title: "Acne Cream",
     category: ["regular"]
   },
   {
     id: "img009",
     source: ezcemaOil,
-    caption: "Ezcema Oil",
+    title: "Ezcema Oil",
     category: ["regular"]
   },
 ]

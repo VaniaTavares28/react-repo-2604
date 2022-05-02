@@ -1,0 +1,1 @@
+export const capitalizeStrings = (str) => `${str.chartAt(0).toUpperCase()}${str.slice(1)}`

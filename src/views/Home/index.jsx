@@ -1,9 +1,11 @@
 import React from 'react'
+// import axios from 'axios';
 import { Banner, Cards, CardsHeader, Header, LandingContent, SectionTitle } from '../../components';
 import "./style.scss";
 
 const content = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?"
 const Home = () => {
+console.log(process.env.REACT_APP_FAKE_STORE_API)
   return (
     <>
     <Banner/>
