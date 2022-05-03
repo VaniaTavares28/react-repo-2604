@@ -1,14 +1,16 @@
 import React from 'react'
 import HighlightBanner from '../HighlightBanner'
-import "./style.scss"
+import Button from '../Button';
+import "./style.scss";
 
-const LandingContent = ({title, content, highlight}) => {
+const LandingContent = ({button, title, content, highlight}) => {
   return (
     <div className='landing'>
     <div className='landing-content'>
       {!!highlight && <HighlightBanner text="New!" type="new"/>}
     <h2>All Natural <br/>{title}</h2>
     <p>{content}</p>
+{!!button && <Button buttonContent="Shop products" buttonType="no-fill" />}
     </div>
     <div className="image-container"/>
     </div>

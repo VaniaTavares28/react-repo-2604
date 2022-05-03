@@ -1,0 +1,13 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
+
+.custom-button-no-fill {
+  @include custom-buttons(173px, 35px, $color_rangitoto_black, transparent, $color_oxford_blue);
+  &:hover {
+    background-color: $color_white;
+  }
+}
+
+.custom-button-no-fill-disabled {
+  @include custom-buttons(173px, 35px, $color_rangitoto_black, $color_light_grey, $color_oxford_blue);
+}
