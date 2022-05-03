@@ -1,0 +1,7 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
+
+.cards-header {
+  @include flex-settings(row, space-between, flex-start);
+  padding-bottom: 29px;
+}

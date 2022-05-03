@@ -2,12 +2,13 @@ import React from 'react';
 import "./style.scss"
 
 const stylingTypes ={
-  new: "oxford-blue",
-  discount: "brow"
+  new: "oxford_blue",
+  discount: "cape_brown",
 }
-const HighlightBanner = ({text, type}) => {
+
+const HighlightBanner = ({text, type, absolute}) => {
   return (
-    <div className={`card-banner ${stylingTypes[type]}`}>
+    <div className={`card-banner-${stylingTypes[type]} ${absolute ? "hightlight-absolute" : ""}`}>
       {text}
     </div>
   )

@@ -5,11 +5,11 @@
   padding: 20px 53px 0 53px;
   height: max-content;
   width: 100%;
-  @include flex-settings(row, space-between, flex-start);
+  @include flex-settings(row, flex-start, flex-start);
 
   .landing-content {
     height: 100%;
-    padding: 79px 10px 0 0;
+    padding: 79px 15px 10px 0;
     @include flex-settings(column, space-around, flex-start);
     h2 {
       font: $heading_font_1;
@@ -27,9 +27,13 @@
   }
   
   .image-container {
-    height: 527px;
-    width: 527px;
-    background-image: url('../../assets/images/home-image.png');
-    background-size: cover;
+    height: 427px;
+    width: 427px;
+    align-self: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

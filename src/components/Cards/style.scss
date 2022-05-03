@@ -1,0 +1,61 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  column-gap: 15px;
+  row-gap: 90px;
+
+  .lg {
+    width: 251px;
+    height: 462px;
+  }
+  .card-wrapper {
+    position: relative;
+    color: $color_rangitoto_black;
+
+    h4 {
+      padding-top: 14px;
+      font: $heading_font_6
+    }
+    p {
+      font: $body_font_3_high
+    }
+    img {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+    }
+    .img-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      &:hover {
+        opacity: 1;
+        transition: opacity 0.4s ease-in-out;
+      }
+    }
+    .extras-container {
+      @include flex-settings(row, flex-start, center);
+      padding: 12px 0;
+      .card-extra-bold {
+        font: $heading_font_6;
+        text-decoration: underline;
+      }
+      .card-extra-discount {
+        color: $color_cape_brown;
+      }
+      p{
+        &:nth-child(2n) {
+        text-decoration: line-through;
+        padding-inline-start: 7px;
+        }
+      }
+    }
+  }
+}

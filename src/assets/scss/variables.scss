@@ -26,6 +26,7 @@ $color_cape_brown: #A67744;
 $color_beige: #F7F5E6;
 $color_alabaster: #F7F7F7;
 $color_athens_gray: #EEF2F4;
+$color_athens_gray_ligther: #EEF3F4;
 $color_silver_rust: #C6B9B6;
 $color_oxford_blue: #354E57;
 $color_oxford_darker: #2B434B;
@@ -39,6 +40,8 @@ $color_white: #FFFFFF;
 $color_brown: #956A53;
 $color_light_grey: #E4ECEF;
 
-
-
+$highlight_banner: (
+  "oxford_blue": $color_oxford_blue,
+  "cape_brown": $color_cape_brown
+)
 
