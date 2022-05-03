@@ -1,10 +1,13 @@
 import React from 'react'
-import { Banner } from '../../components'
+import { Banner, Header, HeaderContainer } from '../../components'
 
 const Home = () => {
   return (
     <>
-      <Banner/>
+    <Banner/>
+    <HeaderContainer>
+      <Header/>
+    </HeaderContainer>
     </>
   )
 }
