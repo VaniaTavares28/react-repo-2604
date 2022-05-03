@@ -1,11 +1,12 @@
 @import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
 
 .banner-wrapper {
   width: 100vw;
   height: 40px;
   color: $color_beige;
   background-color: $color_cape_brown;
-  text-align: center;
+  @include flex-settings(row, center, center);
   h4 {
     font: $body_font_1_500;
     color: inherit;

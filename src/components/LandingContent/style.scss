@@ -1,15 +1,16 @@
 @import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
 
 .landing {
   padding: 20px 53px 0 53px;
-  display: flex;
-  justify-content: space-between;
   height: max-content;
   width: 100%;
+  @include flex-settings(row, space-between, flex-start);
 
   .landing-content {
     height: 100%;
-    padding-inline-end: 10px;
+    padding: 79px 10px 0 0;
+    @include flex-settings(column, space-around, flex-start);
     h2 {
       font: $heading_font_1;
       padding: 14px 0;
@@ -25,8 +26,9 @@
   }
   
   .image-container {
-    height: 527.32px;
-    width: 527.32px;
-    background: transparent url('../../assets/images/home-image.png') 0% 0% no-repeat padding-box;
+    height: 527px;
+    width: 527px;
+    background-image: url('../../assets/images/home-image.png');
+    background-size: cover;
   }
 }

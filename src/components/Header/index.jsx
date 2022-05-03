@@ -3,7 +3,7 @@ import { images } from '../../assets/images';
 import "./style.scss";
 
 const Header = () => {
-  // ask about icon
+
   return (
     <div className='navigation-wrapper'>
       <nav className='navigation-top'>

@@ -1,19 +1,15 @@
 @import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
 
 .navigation-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-settings(column, space-between, center);
+
   .navigation-bottom, .navigation-top ul {
     list-style: none;
     }
   
   .navigation-top {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
+    @include flex-settings(row, space-between, flex-start);
       width: 100%;
 
       h2 {
@@ -45,23 +41,16 @@
         }
       }
       .navigation-right {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        @include flex-settings(row, space-around, center);
         width: 20%;
         ul {
           width: 60%;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
+          @include flex-settings(row, space-between, center);
         }
       }
     }
   .navigation-bottom {
-      display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+    @include flex-settings(row, space-between, center);
         width: 50%;
         padding-top: 28px;
         padding-bottom: 1px;

@@ -1,0 +1,6 @@
+@import "../../assets/scss/variables.scss";
+@import "../../assets/scss/mixins.scss";
+
+.section-title-wrapper {
+  @include section-wrapper($body_font_1, $color_como_green)
+}
