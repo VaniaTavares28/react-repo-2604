@@ -81,6 +81,7 @@
       list-style: none;
       margin-inline-start: 1vw;
       li > a {
+        font: $heading_font_5;
         text-decoration: none;
         color: inherit;
       }
@@ -100,6 +101,65 @@
   }
 
   @media screen and (min-width: 850px) {
-  display: none;
+    display: none;
+  }
+}
+
+.navigation-toggle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  @include flex-settings(column, flex-end, center);
+  padding: 5vh 5vw;
+  background-color: $color_forest_green;
+  z-index: 30;
+  ul {
+    list-style: none;
+    margin-bottom: 10vh;
+
+    li, li > a {
+      margin-inline-start: 0;
+      text-decoration: none;
+      color: $color_silver;
+      font: $heading_font_5;
+      padding: 1vh 0;
+      @media screen and (min-width: 450px) {
+        margin-inline-start: 1vw;
+        font: $heading_font_6;
+      }
+    }
+  }
+
+  .btn-absolute {
+    @include custom-buttons(40px, 40px, $color_forest_green, $color_silver, transparent);
+    font-weight: 900;
+    border-radius: 50%;
+    margin-bottom: 2vh;
+    order: 10;
+    align-self: center;
+
+    &:hover {
+      background-color: $color_athens_gray;
+    }
+
+    @media screen and (min-width: 450px) {
+      align-self: flex-end;
+      order: -10;
+    }
+  }
+
+  @media screen and (min-width: 450px) {
+    @include flex-settings(column, flex-start, flex-start);
+    width: 45vw;
+  }
+
+  @media screen and (min-width: 650px) {
+    width: 35vw;
+  }
+  
+  @media screen and (min-width: 850px) {
+    display: none;
   }
 }
