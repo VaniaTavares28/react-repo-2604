@@ -7,7 +7,7 @@
   height: 100vh;
   color: $color_oxford_blue;
   background-color: $color_athens_gray_ligther;
-  padding: 60px 50px;
+  padding: 75px 50px 45px;
   @include flex-settings(column, flex-start, flex-start);
   z-index: 30;
  
@@ -17,7 +17,7 @@
     top: 2vh;
     right: 2vw;
     background-color: $color_silver;
-    padding: 1vh 1vw;
+    padding: 0.5vh 0.5vw;
   }
 
   p {
@@ -76,34 +76,33 @@
       }
       
       .edit-cart {
-        @include flex-settings(row, center, center);
+        @include flex-settings(row, flex-start, center);
         position: relative;
         border: none;
         
-        span {
-          position: absolute;
-          font: $body_font_2_high;
-          bottom: 0;
-          right: 2.5%;
-        }
         input {
           width: $min_measure;
           height: $min_measure;
           padding: 5px;
-          margin: 0 1vw;
-          text-align: center
+          text-align: center;
+          border: 0.5px solid $color_rangitoto_black;
         }
 
         .btn {
+          margin: 0 0.5vw;
         @include custom-buttons($min_measure, $min_measure, $color_rangitoto_black, transparent, $color_oxford_blue);
         &:hover {
           background-color: $color_white;
         }
       }
 
-      .btn-disabled {
-        @include custom-buttons($min_measure, $min_measure, $color_rangitoto_black, $color_silver, $color_oxford_blue);
-      }}
+      .btn-absolute {
+        @include custom-buttons($min_measure, $min_measure, $color_rangitoto_black, $color_silver, transparent);
+        font: $body_font_2_high;
+        position: absolute;
+        right: 0.5vw;
+      }
+    }
     }
   }
 
@@ -122,7 +121,7 @@
 
   @media screen and (min-width: 500px) {
     width: 35vw;
-    padding: 60px 45px;
+    padding: 75px 45px 45px;
     top: 0;
     right: 0;
   }

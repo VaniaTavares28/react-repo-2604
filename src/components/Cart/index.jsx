@@ -33,8 +33,8 @@ const CartCard = ({cartItem, editCart}) => {
       <div className='cart-card-content'>
         <h5>{quantity}x {title}</h5>
 
-        {editCart && <div className='edit-cart'><span onClick={handleRemove}>&#10005;</span>
-        <button onClick={decreaseQuantity} disabled={quantity === 0} className={quantity > 0 ? "btn" : "btn-disabled"}>-</button>
+        {editCart && <div className='edit-cart'><button onClick={handleRemove} className="btn-absolute">&#10005;</button>
+        <button onClick={decreaseQuantity} disabled={quantity === 0} className="btn">-</button>
         <input value={quantity} type="number" min="0" onChange={handleChange}/>
         <button onClick={increaseQuantity} className="btn">+</button>
         </div>}

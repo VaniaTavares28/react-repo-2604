@@ -62,7 +62,7 @@ export const CartContextProvider = ({children}) => {
       const savedTotal = parseInt(localStorage.getItem("total"));
       let savedItems = localStorage.getItem("cartItems");
       if(savedItems){ 
-        setCartTotal(savedTotal);
+        setCartTotal(savedTotal / 100);
         setShoppedItems(JSON.parse(savedItems));
       }
     }
