@@ -2,38 +2,69 @@
 @import "../../assets/scss/mixins.scss";
 
 .landing {
-  padding: 20px 53px 0 53px;
+  padding: 3vh 10vw 1.5vh;
   height: max-content;
   width: 100%;
-  @include flex-settings(row, flex-start, flex-start);
+  background-color: $color_silver_light;
+  @include flex-settings(column-reverse, flex-start, center);
 
   .landing-content {
     height: 100%;
-    padding: 79px 15px 10px 0;
+    padding: 2.5vh 2vw 0 0;
     @include flex-settings(column, space-around, flex-start);
     h2 {
-      font: $heading_font_1;
-      padding: 14px 0;
+      font: $heading_font_3;
+      overflow-wrap: break-word;
+      padding: 1vh 0;
+
+      @media screen and (min-width: 600px) {
+        font: $heading_font_1;
+      }
     }
     p {
       width: 395px;
-      margin-bottom: 28px;
-      font: $body_font_1_high;
+      margin-bottom: 2.5vh;
+      font: $body_font_3_high;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 3;
       overflow: hidden;
+      @media screen and (min-width: 600px) {
+        font: $body_font_1_high;
+      }
     }
   }
   
   .image-container {
-    height: 427px;
-    width: 427px;
-    align-self: center;
+    display: block;
+    height: 290px;
+    width: 290px;
+    
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    @media screen and (min-width: 900px) {
+      display: none;
+      }
+    
+      @media screen and (min-width: 1200px) {
+        display: block;
+        height: 427px;
+        width: 427px;
+      }
+  }
+
+  @media screen and (min-width: 900px) {
+    padding: 3vh 10vw 1.5vh;
+    background-color: transparent;
+    @include flex-settings(row, flex-start, flex-start);
+    }
+  
+  @media screen and (min-width: 1200px) {
+    @include flex-settings(row, space-around, flex-start);
+    background-color: $color_silver_light;
   }
 }

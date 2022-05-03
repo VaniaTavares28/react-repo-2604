@@ -3,10 +3,11 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  column-gap: 15px;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 10px;
   row-gap: 90px;
+  place-items: center;
 
   .lg {
     width: 251px;
@@ -22,7 +23,7 @@
     @include flex-settings(column, space-between, flex-start);
 
     h4 {
-      padding-top: 14px;
+      padding-top: 2vh;
       font: $heading_font_6;
     }
     p {
@@ -51,7 +52,7 @@
     }
     .extras-container {
       @include flex-settings(row, flex-start, center);
-      padding-top: 12px;
+      padding-top: 1.5vh;
       .card-extra-bold {
         font: $heading_font_6;
         text-decoration: underline;
@@ -62,17 +63,32 @@
       p{
         &:nth-child(2n) {
         text-decoration: line-through;
-        padding-inline-start: 7px;
+        padding-inline-start: 2.5vw;
         }
       }
     }
     .rating-container {
       @include flex-settings(row, flex-start, center);
-      padding-bottom: 6px;
+      padding-bottom: 2.5vh;
       p {
         font-weight: 700;
-        padding-inline-end: 10px;
+        padding-inline-end: 2vw;
       }
     }
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+  }
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 15px;
   }
 }

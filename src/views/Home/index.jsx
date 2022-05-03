@@ -48,11 +48,11 @@ useEffect(() => {
       <LandingContent button={true} highlight={true} title="Skin Remedies." content={content} />
        </div>
     <SectionTitle borderLow="border-low" title="Solutions for all skin" content="Explore our innovative skincare products"/>
-    <div className="single-row-card-container">
+    <div className="card-section-container">
       <CardsHeader cardsHeader="Most Popular"/>
       <Cards content={cardImages} size="lg" filter={(card) => card.hasOwnProperty("overlay")}/>
     </div>
-    <div className="single-row-card-container">
+    <div className="card-section-container">
       <CardsHeader cardsHeader="Top Rated"/>
       {storeLoading ? <div><h2>Loading...</h2></div> : storeError ? <div><h2>There was an error...</h2></div> : <Cards content={storeContent} size="xl" filter={(card) => card.category.includes("clothing") && card.rating.rate > 2.7}/>}
     </div>

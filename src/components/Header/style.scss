@@ -3,6 +3,7 @@
 
 .navigation-wrapper {
   @include flex-settings(column, space-between, center);
+  padding: 2.5vh 5vw 1vh;
 
   .navigation-bottom, .navigation-top ul {
     list-style: none;
@@ -52,8 +53,12 @@
   .navigation-bottom {
     @include flex-settings(row, space-between, center);
         width: 50%;
-        padding-top: 28px;
-        padding-bottom: 1px;
+        padding-top: 2.5vh;
+        padding-bottom: 0.4vh;
         @include letter-dist(0.8px);
   }
+}
+
+.navigation-wrapper-mobile {
+  display: none;
 }
