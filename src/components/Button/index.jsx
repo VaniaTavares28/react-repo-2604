@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import CartContext from '../../context/CartContext';
 import "./style.scss";
 
-const Button = ({buttonContent, buttonType, disabled, title, price, quantity, image}) => {
+const Button = ({buttonContent, buttonType, disabled, buttonInfo}) => {
   const { addToCart } = useContext(CartContext)
+  
   const handleClick = () => {
-    if(title && price && image) {
-      const newItemToAdd = {title, price, quantity, image}
+    if(buttonInfo?.title && buttonInfo?.price && buttonInfo?.image && buttonInfo?.id) {
+      const {title, price, image, id} = buttonInfo
+      const newItemToAdd = {title, price, image, id}
       addToCart(newItemToAdd);
     }
   }

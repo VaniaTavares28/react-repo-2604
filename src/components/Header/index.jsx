@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { images } from '../../assets/images';
+import CartContext from '../../context/CartContext';
 import { subMenu } from '../../helpers/constants';
 import "./style.scss";
 
 const Header = () => {
+  const {openCart, shoppedItems} = useContext(CartContext);
 
+  const handleOpenCart = () => {
+    if(shoppedItems.length) {
+      openCart()
+    }
+  }
   return (
     <div className='navigation-wrapper'>
       <nav className='navigation-top'>
@@ -18,7 +25,7 @@ const Header = () => {
             <img className="navigation-image" src={images.magnifying} alt="magnifying"/>
             </div>
         <ul>
-        <li><a href='.'>Cart</a></li>
+        <li><a href='.' onClick={handleOpenCart}>Cart</a></li>
         <li><a href='.'>Login</a></li>
         </ul>
         </div>

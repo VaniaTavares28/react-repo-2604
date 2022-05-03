@@ -15,7 +15,7 @@
       h2 {
         color: $color_forest_green;
         font: $heading_somantic;
-        letter-spacing: 2 * $letter_space_basic;
+        @include letter-dist(16px);
       }
       .navigation-image-container {
         width: 15px;
@@ -54,6 +54,6 @@
         width: 50%;
         padding-top: 28px;
         padding-bottom: 1px;
-        letter-spacing: $letter_space_basic;
+        @include letter-dist(8px);
   }
 }

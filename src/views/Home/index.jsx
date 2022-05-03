@@ -1,45 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { cardImages } from '../../assets/images';
-import { Banner, Cards, CardsHeader, Header, LandingContent, SectionTitle } from '../../components';
+import { Banner, Cards, CardsHeader, Cart, Header, LandingContent, SectionTitle } from '../../components';
 import "./style.scss";
+import CartContext from '../../context/CartContext';
 
 const content = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?"
 const Home = () => {
+  const { shoppedItems, showCart } = useContext(CartContext)
   const [storeContent, setStoreContent] = useState([]);
   const [storeLoading, setStoreLoading] = useState(false);
   const [storeError, setStoreError] = useState(false);
-  
+
+
 useEffect(() => {
   const controller = new AbortController();
-  const storeRequest = async() => {
-    setStoreLoading(true)
-    try {
-      const res = await axios(`${process.env.REACT_APP_FAKE_STORE_API}`, {
-        signal: controller.signal
-     });
-      console.log(res) 
-      if(res){
-        setStoreContent(res.data);
+  if(!storeContent.length) {
+    const storeRequest = async() => {
+      setStoreLoading(true)
+      try {
+        const res = await axios(`${process.env.REACT_APP_FAKE_STORE_API}`, {
+          signal: controller.signal
+       });
+       
+        if(res){
+          setStoreContent(res.data);
+          setStoreLoading(false)
+          setStoreError(false)
+        }
+      } catch (error) {
+        setStoreError(true)
         setStoreLoading(false)
       }
-    } catch (error) {
-      setStoreError(true)
-      setStoreLoading(false)
     }
+    storeRequest()
   }
-  storeRequest()
 
   return () => controller.abort()
-}, [])
+}, [storeContent])
 
-if(storeLoading) return <div><h2>Loading...</h2></div>
-if(!storeContent.length && storeError) return <div><h3>There was an error</h3></div>
   return (
     <>
+    {showCart && shoppedItems.length && <Cart/>}
     <Banner/>
     <div className='header-container'>
-      <Header/>
+      <Header />
       <LandingContent button={true} highlight={true} title="Skin Remedies." content={content} />
        </div>
     <SectionTitle borderLow="border-low" title="Solutions for all skin" content="Explore our innovative skincare products"/>
@@ -49,7 +54,7 @@ if(!storeContent.length && storeError) return <div><h3>There was an error</h3></
     </div>
     <div className="single-row-card-container">
       <CardsHeader cardsHeader="Top Rated"/>
-      <Cards content={storeContent} size="xl" filter={(card) => card.category.includes("clothing") && card.rating.rate > 2.7}/>
+      {storeLoading ? <div><h2>Loading...</h2></div> : storeError ? <div><h2>There was an error...</h2></div> : <Cards content={storeContent} size="xl" filter={(card) => card.category.includes("clothing") && card.rating.rate > 2.7}/>}
     </div>
     </>
   )
