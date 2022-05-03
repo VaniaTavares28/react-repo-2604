@@ -1,0 +1,18 @@
+@import "../../assets/scss/variables.scss";
+
+.card-banner {
+  width: 50px;
+  height: 28px;
+  background-color: $color_alabaster;
+  text-align: center;
+  padding: 8px 0;
+  font: $body_font_3;
+  
+  .dark-blue {
+    color: $color_oxford_blue
+  }
+
+  .brown {
+    color: $color_cape_brown
+  }
+}

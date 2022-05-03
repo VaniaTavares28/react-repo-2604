@@ -1,0 +1,32 @@
+@import "../../assets/scss/variables.scss";
+
+.landing {
+  padding: 20px 53px 0 53px;
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+  width: 100%;
+
+  .landing-content {
+    height: 100%;
+    padding-inline-end: 10px;
+    h2 {
+      font: $heading_font_1;
+      padding: 14px 0;
+    }
+    p {
+      width: 395px;
+      font: $body_font_1_high;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+  
+  .image-container {
+    height: 527.32px;
+    width: 527.32px;
+    background: transparent url('../../assets/images/home-image.png') 0% 0% no-repeat padding-box;
+  }
+}
