@@ -3,13 +3,11 @@
 
 .cart-container {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 35vw;
+  width: 100vw;
   height: 100vh;
   color: $color_oxford_blue;
   background-color: $color_athens_gray_ligther;
-  padding: 60px 45px;
+  padding: 60px 50px;
   @include flex-settings(column, flex-start, flex-start);
   z-index: 30;
  
@@ -51,7 +49,6 @@
 
   .cart-card {
     @include flex-settings(row, flex-start, stretch);
-    width: 100%;
     height: 100px;
     margin-bottom: 1vh;
   
@@ -90,22 +87,22 @@
           right: 2.5%;
         }
         input {
-          width: 30px;
-          height: 30px;
+          width: $min_measure;
+          height: $min_measure;
           padding: 5px;
           margin: 0 1vw;
           text-align: center
         }
 
         .btn {
-        @include custom-buttons(30px, 30px, $color_rangitoto_black, transparent, $color_oxford_blue);
+        @include custom-buttons($min_measure, $min_measure, $color_rangitoto_black, transparent, $color_oxford_blue);
         &:hover {
           background-color: $color_white;
         }
       }
 
       .btn-disabled {
-        @include custom-buttons(30px, 30px, $color_rangitoto_black, $color_silver, $color_oxford_blue);
+        @include custom-buttons($min_measure, $min_measure, $color_rangitoto_black, $color_silver, $color_oxford_blue);
       }}
     }
   }
@@ -121,5 +118,12 @@
     h4 {
       font: $heading_font_7;
     }
+  }
+
+  @media screen and (min-width: 500px) {
+    width: 35vw;
+    padding: 60px 45px;
+    top: 0;
+    right: 0;
   }
 }
