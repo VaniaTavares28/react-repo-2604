@@ -10,6 +10,9 @@ const ColoredSection = ({title, text, image, reverse, color}) => {
         <p>{text}</p>
         <Button text="Shop More" type={color === "silver_rust" ? "brown-no-fill" : "white-no-fill"}/>
       </div>
+      <div className='colored-section-image'>
+        <img src={image} alt={title} />
+      </div>
     </div>
   )
 }
