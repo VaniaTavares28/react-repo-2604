@@ -35,3 +35,10 @@
 @mixin letter-dist($space) {
   letter-spacing: $space;
 }
+
+@mixin wrap-line($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}

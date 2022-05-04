@@ -25,10 +25,7 @@
       width: 395px;
       margin-bottom: 2.5vh;
       font: $body_font_3_high;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+      @include wrap-line(3);
       @media screen and (min-width: 600px) {
         font: $body_font_1_high;
       }

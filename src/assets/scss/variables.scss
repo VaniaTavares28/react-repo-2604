@@ -44,9 +44,14 @@ $color_white: #FFFFFF;
 $color_brown: #956A53;
 $color_light_grey: #E4ECEF;
 
-$highlight_banner: (
+$color_black_low_opacity: rgba(0, 0, 0, 0.3);
+
+
+$colors_map: (
   "oxford_blue": $color_oxford_blue,
-  "cape_brown": $color_cape_brown
+  "cape_brown": $color_cape_brown,
+  "como_green": $color_como_green,
+  "silver_rust": $color_silver_rust,
 );
 
 /* spacing */
