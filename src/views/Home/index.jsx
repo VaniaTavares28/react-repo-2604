@@ -19,7 +19,7 @@ useEffect(() => {
     const storeRequest = async() => {
       setStoreLoading(true)
       try {
-        const res = await axios(`${process.env.REACT_APP_FAKE_STORE_API}`, {
+        const res = await axios("https://fakestoreapi.com/products", {
           signal: controller.signal
        });
        
@@ -60,4 +60,4 @@ useEffect(() => {
   )
 }
 
-export default Home
+export default Home;
