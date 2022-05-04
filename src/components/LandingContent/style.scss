@@ -4,13 +4,14 @@
 .landing {
   padding: 3vh 10vw 1.5vh;
   height: max-content;
-  width: 100%;
+  width: 100vw;
   background-color: $color_silver_light;
   @include flex-settings(column-reverse, flex-start, center);
 
   .landing-content {
     height: 100%;
-    padding: 2.5vh 2vw 0 0;
+    width: 100%;
+    padding: 2.5vh 0;
     @include flex-settings(column, space-around, flex-start);
     h2 {
       font: $heading_font_3;
@@ -19,14 +20,21 @@
 
       @media screen and (min-width: 600px) {
         font: $heading_font_1;
+        padding: 1vh 0;
       }
     }
     p {
-      width: 395px;
+      width: 230px;
       margin-bottom: 2.5vh;
       font: $body_font_3_high;
       @include wrap-line(3);
+
+      @media screen and (min-width: 300px) {
+        width: 280px;
+        font: $body_font_1_high;
+      }
       @media screen and (min-width: 600px) {
+        width: 395px;
         font: $body_font_1_high;
       }
     }

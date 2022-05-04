@@ -14,7 +14,7 @@
     
     .navigation-top {
       @include flex-settings(row, space-between, flex-start);
-        width: 100%;
+        width: 100vw;
   
         h2 {
           color: $color_forest_green;

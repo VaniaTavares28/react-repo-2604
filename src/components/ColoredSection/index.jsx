@@ -4,7 +4,7 @@ import './style.scss';
 
 const ColoredSection = ({title, text, image, reverse, color}) => {
   return (
-    <div className={`colored-section-${color}${reverse ? "-reverse" : ""}`}>
+    <div className={`colored-section ${color} ${reverse ? "reverse" : ""}`}>
       <div className='colored-section-content'>
         <h3>{title}</h3>
         <p>{text}</p>

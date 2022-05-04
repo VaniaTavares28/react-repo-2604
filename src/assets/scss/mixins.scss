@@ -1,11 +1,12 @@
 @mixin section-wrapper($font, $border-color) {
-  height: 141px;
+  height: max-content;
   color: $color_oxford_blue;
   border: 1px solid $border-color;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 3vh 2vw;
   h3 {
     font: $heading_font_4;
   }
