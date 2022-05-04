@@ -6,7 +6,7 @@ const Button = ({buttonContent, buttonType, disabled, buttonInfo}) => {
   const { addToCart } = useContext(CartContext)
   
   const handleClick = () => {
-    if(buttonInfo?.title && buttonInfo?.price && buttonInfo?.image && buttonInfo?.id) {
+    if(buttonInfo?.price) {
       const {title, price, image, id} = buttonInfo
       const newItemToAdd = {title, price, image, id}
       addToCart(newItemToAdd);
