@@ -1,49 +1,74 @@
 import React, { useContext, useState } from 'react';
-import CartContext from '../../context/CartContext';
-import { roundWithTwoDecimals } from '../../helpers/functions';
-import './style.scss';
+import { toast } from "react-toastify";
+import CartContext from "../../context/CartContext";
+import { roundWithTwoDecimals } from "../../helpers/functions";
+import "./style.scss";
 
-const CartCard = ({cartItem, editCart}) => {
+const CartCard = ({ cartItem, editCart }) => {
   const { updateQuantity, removeFromCart } = useContext(CartContext);
-  const { title, quantity, image, id} = cartItem;
- 
+  const { title, quantity, image, id } = cartItem;
+
   const increaseQuantity = () => {
     const newQuantity = quantity + 1;
-    updateQuantity({id, quantity: newQuantity})
-  }
+    updateQuantity({ id, quantity: newQuantity });
+  };
 
   const decreaseQuantity = () => {
     const newQuantity = quantity - 1;
-    updateQuantity({id, quantity: newQuantity})
-  }
+    updateQuantity({ id, quantity: newQuantity });
+  };
 
-  const handleChange = ({target}) => {
-    updateQuantity({id, quantity: target.value})
-  }
+  const handleChange = ({ target }) => {
+    if (quantity === 1) {
+      toast.warning(
+        `If you removed the remaining item, it will be removed from cart.`
+      );
+    }
+    updateQuantity({ id, quantity: target.value });
+  };
 
   const handleRemove = () => {
-    removeFromCart({id})
-  }
+    removeFromCart({ id });
+    toast.warning(`${title} removed from Cart.`);
+  };
 
   return (
-    <div className='cart-card'>
-      <div className='cart-card-image'>
-        <img src={image} alt={title}/>
+    <div className="cart-card">
+      <div className="cart-card-image">
+        <img src={image} alt={title} />
       </div>
-      <div className='cart-card-content'>
-        <h5>{quantity}x {title}</h5>
+      <div className="cart-card-content">
+        <h5>
+          {quantity}x {title}
+        </h5>
 
-        {editCart && <div className='edit-cart'><button onClick={handleRemove} className="btn-absolute">&#10005;</button>
-        <button onClick={decreaseQuantity} disabled={quantity === 0} className="btn">-</button>
-        <input value={quantity} type="number" min="0" onChange={handleChange}/>
-        <button onClick={increaseQuantity} className="btn">+</button>
-        </div>}
+        {editCart && (
+          <div className="edit-cart">
+            <button onClick={handleRemove} className="btn-absolute">
+              &#10005;
+            </button>
+            <button
+              onClick={decreaseQuantity}
+              disabled={quantity === 0}
+              className="btn"
+            >
+              -
+            </button>
+            <input
+              value={quantity}
+              type="number"
+              min="0"
+              onChange={handleChange}
+            />
+            <button onClick={increaseQuantity} className="btn">
+              +
+            </button>
+          </div>
+        )}
       </div>
     </div>
-  )
-
- 
-}
+  );
+};
 
 const Cart = () => {
   const {cartTotal, shoppedItems, closeCart } = useContext(CartContext);
