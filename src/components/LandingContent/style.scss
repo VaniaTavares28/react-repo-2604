@@ -5,13 +5,11 @@
   padding: 3vh 10vw 1.5vh;
   height: max-content;
   width: 100vw;
-  background-color: $color_silver_light;
-  @include flex-settings(column-reverse, flex-start, center);
+  @include flex-settings(row, center, center);
 
   .landing-content {
     height: 100%;
     width: 100%;
-    padding: 2.5vh 0;
     @include flex-settings(column, space-around, flex-start);
     h2 {
       font: $heading_font_3;
@@ -38,38 +36,29 @@
         font: $body_font_1_high;
       }
     }
+    @media screen and (min-width: 900px) {
+      padding: 2.5vh 0;
+    }
   }
   
   .image-container {
-    display: block;
-    height: 290px;
-    width: 290px;
+    display: none;
     
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @media screen and (min-width: 900px) {
+      display: block;
+      pading: 0;
+      height: 500px;
+      width: 500px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
-
-    @media screen and (min-width: 1000px) {
-      display: none;
-      }
-    
-      @media screen and (min-width: 1200px) {
-        display: block;
-        height: 427px;
-        width: 427px;
-      }
   }
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 900px) {
     padding: 3vh 10vw 1.5vh;
-    background-color: transparent;
-    @include flex-settings(row, flex-start, flex-start);
-    }
-  
-  @media screen and (min-width: 1200px) {
     @include flex-settings(row, space-around, flex-start);
-    background-color: $color_silver_light;
   }
 }

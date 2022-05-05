@@ -6,7 +6,7 @@
   width: 100vw;
   height: 100vh;
   color: $color_oxford_blue;
-  background-color: $color_athens_gray_ligther;
+  background-color: $color_athens_gray_lighter;
   padding: 7vh 8vw 5vh;
   @include flex-settings(column, flex-start, flex-start);
   z-index: 30;
@@ -81,11 +81,17 @@
         border: none;
         
         input {
-          width: $min_measure;
+          width: $measure;
           height: $min_measure;
-          padding: 5px;
           text-align: center;
           border: 0.5px solid $color_rangitoto_black;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; 
         }
 
         .btn {

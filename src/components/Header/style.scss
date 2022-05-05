@@ -7,14 +7,11 @@
   @media screen and (min-width: 850px) {
     @include flex-settings(column, space-between, center);
     padding: 2.5vh 5vw 1vh;
-  
-    .navigation-bottom, .navigation-top ul {
-      list-style: none;
-      }
     
     .navigation-top {
       @include flex-settings(row, space-between, flex-start);
         width: 100vw;
+        padding: 0 2vw;
   
         h2 {
           color: $color_forest_green;
@@ -39,10 +36,6 @@
           flex-direction: inherit;
           justify-content: inherit;
           align-items: center;
-          li > a {
-            text-decoration: none;
-            color: inherit;
-          }
         }
         .navigation-right {
           @include flex-settings(row, space-around, center);
@@ -78,12 +71,9 @@
     }
 
     ul {
-      list-style: none;
       margin-inline-start: 1vw;
       li > a {
         font: $heading_font_5;
-        text-decoration: none;
-        color: inherit;
       }
     }
 
@@ -113,16 +103,15 @@
   height: 100vh;
   @include flex-settings(column, flex-end, center);
   padding: 5vh 5vw;
-  background-color: $color_forest_green;
+  background-color: $color_alabaster;
   z-index: 30;
   ul {
-    list-style: none;
     margin-bottom: 10vh;
 
     li, li > a {
       margin-inline-start: 0;
       text-decoration: none;
-      color: $color_silver;
+      color: $color_forest_green;
       font: $heading_font_5;
       padding: 1vh 0;
       @media screen and (min-width: 450px) {
@@ -133,7 +122,7 @@
   }
 
   .btn-absolute {
-    @include custom-buttons(40px, 40px, $color_forest_green, $color_silver, transparent);
+    @include custom-buttons(40px, 40px, $color_forest_green, transparent, transparent);
     font-weight: 900;
     border-radius: 50%;
     margin-bottom: 2vh;
@@ -141,7 +130,7 @@
     align-self: center;
 
     &:hover {
-      background-color: $color_athens_gray;
+      background-color: $color_black_low_opacity;
     }
 
     @media screen and (min-width: 450px) {

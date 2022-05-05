@@ -3,21 +3,14 @@
 .header-container {
   color: $color_oxford_blue;
   width: 100vw;
-  background: none;
-
-  @media screen and (min-width: 900px) {
   background-image: url("../../assets/images/updated_Header-1.png");
   background-repeat: no-repeat;
   background-size: cover;
-  }
-
-  @media screen and (min-width: 1200px) {
-    background: none;
-  }
 }
 
-.card-section-container {
+.card-section-container-1, .card-section-container-2 {
   padding: 3vh 5.5vw 6vh;
+  margin: 5vh 0;
 
   @media screen and (min-width: 900px) {
     padding: 3vh 4.5vw 6vh;
