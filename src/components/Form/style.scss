@@ -1,0 +1,12 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.form-container {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color_silver;
+  @include flex-settings(column, center, center);
+}

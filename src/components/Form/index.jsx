@@ -2,24 +2,8 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { inputFields } from "../../helpers/constants";
 import { capitalizeStrings } from "../../helpers/functions";
-
-const InputField = ({ field, handleChange, showPassword, value }) => {
-  const { name, placeholder, inputType } = field;
-  return (
-    <>
-      <label htmlFor={name}>{capitalizeStrings(name)}:</label>
-      <input
-        type={name === "password" && showPassword ? "text" : inputType}
-        id={name}
-        name={name}
-        value={value}
-        placeholder={placeholder}
-        onChange={(e) => handleChange(e, name)}
-      />
-      <br />
-    </>
-  );
-};
+import InputField from "./InputField";
+import "./style.scss";
 
 const Form = ({ category, setCategory, setShowForm }) => {
   const [username, setUsername] = useState("");
@@ -59,9 +43,10 @@ const Form = ({ category, setCategory, setShowForm }) => {
         return;
       }
       let users = JSON.parse(usersStored);
-      const foundUser = users.filter(
+      const foundUser = users.find(
         (user) => user.username === username && user.password === password
       );
+      console.log(foundUser);
       foundUser
         ? toast.success(`Welcome back, ${username}`)
         : toast.error("Invalid credentials");
@@ -76,7 +61,7 @@ const Form = ({ category, setCategory, setShowForm }) => {
   };
 
   return (
-    <>
+    <div className="form-container">
       <h2 className="form-header">{capitalizeStrings(category)}</h2>
       <button onClick={() => setShowForm(false)} className="btn-absolute">
         &#10005;
@@ -99,10 +84,16 @@ const Form = ({ category, setCategory, setShowForm }) => {
               showPassword={showPassword}
             />
           ))}
-        <input type="checkbox" onChange={handleCheckboxChange} />
+        <label htmlFor="show password">{showPassword ? "Hide" : "Show"}:</label>
+        <input
+          id="show password"
+          type="checkbox"
+          onChange={handleCheckboxChange}
+        />
+        <br />
         <input type="submit" value="Submit" />
       </form>
-    </>
+    </div>
   );
 };
 

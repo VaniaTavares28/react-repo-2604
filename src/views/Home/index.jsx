@@ -29,6 +29,7 @@ const Home = () => {
   const handleLogIn = () => {
     if (userLoggedIn.length) {
       localStorage.removeItem("loggedIn");
+      localStorage.removeItem("users");
       setUserLoggedIn("");
       toast.success("Successfully logged out!");
     } else {
@@ -69,7 +70,7 @@ const Home = () => {
 
   return (
     <>
-      {showForm && (
+      {!userLoggedIn && showForm && (
         <Form
           category={category}
           setCategory={setCategory}
