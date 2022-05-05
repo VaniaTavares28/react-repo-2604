@@ -4,37 +4,54 @@ import CartContext from '../../context/CartContext';
 import { subMenu } from '../../helpers/constants';
 import "./style.scss";
 
-const Header = () => {
-  const {openCart, shoppedItems} = useContext(CartContext);
+const Header = ({ userLoggedIn, handleLogIn }) => {
+  const { openCart, shoppedItems } = useContext(CartContext);
 
   const handleOpenCart = () => {
-    if(shoppedItems.length) {
-      openCart()
+    if (shoppedItems.length) {
+      openCart();
     }
-  }
+  };
+
   return (
-    <div className='navigation-wrapper'>
-      <nav className='navigation-top'>
-      <ul>
-        <li><a href='.'>About</a></li>
-        <li><a href='.'>Consultation</a></li>
+    <div className="navigation-wrapper">
+      <nav className="navigation-top">
+        <ul>
+          <li>
+            <a href=".">About</a>
+          </li>
+          <li>
+            <a href=".">Consultation</a>
+          </li>
         </ul>
         <h2>sooth</h2>
         <div className="navigation-right">
           <div className="navigation-image-container">
-            <img className="navigation-image" src={images.magnifying} alt="magnifying"/>
-            </div>
-        <ul>
-        <li><a href='.' onClick={handleOpenCart}>Cart</a></li>
-        <li><a href='.'>Login</a></li>
-        </ul>
+            <img
+              className="navigation-image"
+              src={images.magnifying}
+              alt="magnifying"
+            />
+          </div>
+          <ul>
+            <li>
+              <a href="." onClick={handleOpenCart}>
+                {userLoggedIn.length ? userLoggedIn : "Cart"}
+              </a>
+            </li>
+            <li onClick={handleLogIn}>
+              <a href=".">{userLoggedIn ? "Log out" : "Login"}</a>
+            </li>
+          </ul>
         </div>
       </nav>
-      <ul className='navigation-bottom'>
-      {subMenu.map(sub => <li key={sub.id}>{sub.title}</li>)}
+      <ul className="navigation-bottom">
+        {subMenu.map((sub) => (
+          <li key={sub.id}>{sub.title}</li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default Header

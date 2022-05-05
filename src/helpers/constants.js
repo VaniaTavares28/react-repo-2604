@@ -20,3 +20,23 @@ export const subMenu = [
     title: "Vitiligio"
   },
 ]
+
+export const inputFields = [
+  {
+    name: "username",
+    placeholder: "Kim",
+    category: ["register", "login"],
+    inputType: "text",
+  },
+  {
+    name: "email",
+    placeholder: "kim@examplemail.com",
+    category: ["register"],
+    inputType: "email",
+  },
+  {
+    name: "password",
+    category: ["register", "login"],
+    inputType: "password",
+  },
+];
