@@ -2,38 +2,74 @@
 @import "../../assets/scss/mixins.scss";
 
 .landing {
-  padding: 20px 53px 0 53px;
+  padding: 3vh 10vw 1.5vh;
   height: max-content;
-  width: 100%;
-  @include flex-settings(row, flex-start, flex-start);
+  width: 100vw;
+  background-color: $color_silver_light;
+  @include flex-settings(column-reverse, flex-start, center);
 
   .landing-content {
     height: 100%;
-    padding: 79px 15px 10px 0;
+    width: 100%;
+    padding: 2.5vh 0;
     @include flex-settings(column, space-around, flex-start);
     h2 {
-      font: $heading_font_1;
-      padding: 14px 0;
+      font: $heading_font_3;
+      overflow-wrap: break-word;
+      padding: 1vh 0;
+
+      @media screen and (min-width: 600px) {
+        font: $heading_font_1;
+        padding: 1vh 0;
+      }
     }
     p {
-      width: 395px;
-      margin-bottom: 28px;
-      font: $body_font_1_high;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+      width: 230px;
+      margin-bottom: 2.5vh;
+      font: $body_font_3_high;
+      @include wrap-line(3);
+
+      @media screen and (min-width: 300px) {
+        width: 280px;
+        font: $body_font_1_high;
+      }
+      @media screen and (min-width: 600px) {
+        width: 395px;
+        font: $body_font_1_high;
+      }
     }
   }
   
   .image-container {
-    height: 427px;
-    width: 427px;
-    align-self: center;
+    display: block;
+    height: 290px;
+    width: 290px;
+    
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    @media screen and (min-width: 1000px) {
+      display: none;
+      }
+    
+      @media screen and (min-width: 1200px) {
+        display: block;
+        height: 427px;
+        width: 427px;
+      }
+  }
+
+  @media screen and (min-width: 850px) {
+    padding: 3vh 10vw 1.5vh;
+    background-color: transparent;
+    @include flex-settings(row, flex-start, flex-start);
+    }
+  
+  @media screen and (min-width: 1200px) {
+    @include flex-settings(row, space-around, flex-start);
+    background-color: $color_silver_light;
   }
 }

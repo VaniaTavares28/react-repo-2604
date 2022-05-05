@@ -1,6 +1,6 @@
 @import "../../assets/scss/variables.scss";
 
-@each $name, $color in $highlight_banner {
+@each $name, $color in $colors_map {
   .card-banner-#{$name} {
     width: 50px;
   height: 28px;

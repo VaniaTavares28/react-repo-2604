@@ -8,6 +8,23 @@
   }
 }
 
+.custom-button-white-no-fill {
+  font: $heading_font_6;
+  @include custom-buttons(176px, 40px, $color_white, transparent, $color_white);
+  &:hover {
+    background-color: $color_black_low_opacity;
+  }
+}
+
+.custom-button-brown-no-fill {
+  font: $heading_font_6;
+  @include custom-buttons(176px, 40px, $color_rangitoto_black, transparent, $color_brown);
+  
+  &:hover {
+    background-color: $color_white_low_opacity;
+  }
+}
+
 .custom-button-icon-no-fill {
   @include custom-buttons(100%, 35px, $color_rangitoto_black, transparent, $color_oxford_blue);
   &:hover {

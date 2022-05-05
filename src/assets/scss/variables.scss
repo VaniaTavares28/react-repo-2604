@@ -2,7 +2,9 @@
 
 $heading_font_1: 700 normal 48px/58px “Proxima”, sans-serif;
 $heading_font_2: 700 normal 40px/49px “Proxima”, sans-serif;
+$heading_font_2_high: 700 normal 40px/60px “Proxima”, sans-serif;
 $heading_font_3: 700 normal 32px/39px “Proxima”, sans-serif;
+$heading_font_3_high: 700 normal 32px/50px “Proxima”, sans-serif;
 $heading_font_4: 700 normal 28px/34px “Proxima”, sans-serif;
 $heading_font_5: 700 normal 18px/22px “Proxima”, sans-serif;
 $heading_font_6: 700 normal 14px/17px “Proxima”, sans-serif;
@@ -30,6 +32,7 @@ $color_alabaster: #F7F7F7;
 $color_athens_gray: #EEF2F4;
 $color_athens_gray_ligther: #EEF3F4;
 $color_silver: #BACAD1;
+$color_silver_light: #E6E6E6;
 $color_silver_rust: #C6B9B6;
 $color_oxford_blue: #354E57;
 $color_oxford_darker: #2B434B;
@@ -43,9 +46,15 @@ $color_white: #FFFFFF;
 $color_brown: #956A53;
 $color_light_grey: #E4ECEF;
 
-$highlight_banner: (
+$color_black_low_opacity: rgba(0, 0, 0, 0.1);
+$color_white_low_opacity: rgba(255, 255, 255, 0.3);
+
+
+$colors_map: (
   "oxford_blue": $color_oxford_blue,
-  "cape_brown": $color_cape_brown
+  "cape_brown": $color_cape_brown,
+  "como_green": $color_como_green,
+  "silver_rust": $color_silver_rust,
 );
 
 /* spacing */
