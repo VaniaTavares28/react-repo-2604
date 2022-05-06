@@ -4,7 +4,7 @@
 .banner-wrapper {
   width: 100vw;
   min-height: 40px;
-  padding: 10px 174px;
+  padding: 10px 5vw;
   color: $color_beige;
   background-color: $color_cape_brown;
   @include flex-settings(row, center, center);
@@ -13,5 +13,8 @@
     color: inherit;
     overflow-wrap: break-word;
     text-align: center;
+  }
+  @media screen and (min-width: 820px) {
+    padding: 10px 174px;
   }
 }
