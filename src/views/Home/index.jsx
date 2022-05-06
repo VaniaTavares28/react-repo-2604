@@ -55,7 +55,6 @@ const Home = () => {
     storeRequest();
   }, []);
 
-  console.count("rerender");
   return (
     <>
       {showCart && <Cart closeCart={closeCart} />}
