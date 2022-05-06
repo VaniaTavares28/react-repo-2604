@@ -3,9 +3,10 @@
 
 .cards-container {
   width: 100%;
-  @include flex-settings(row, space-around, center);
+  @include flex-settings(row, center, center);
+  gap: 28px;
   flex-wrap: wrap;
-  gap: 15px;
+  padding: 0 99px;
 
   .lg {
     width: 251px;
@@ -77,5 +78,9 @@
         padding-inline-end: 2vw;
       }
     }
+  }
+  @media screen and (min-width: 820px) {
+    @include flex-settings(row, space-between, center);
+    padding: 0 139px;
   }
 }
