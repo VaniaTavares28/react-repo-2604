@@ -12,6 +12,7 @@ import {
   SectionTitle,
 } from "../../components";
 import "./style.scss";
+import { toast } from "react-toastify";
 
 const content =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?";
@@ -50,6 +51,7 @@ const Home = () => {
       } catch (error) {
         setStoreError(true);
         setStoreLoading(false);
+        toast.error("Issues on retrieval");
       }
     };
     storeRequest();

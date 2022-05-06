@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from "react-toastify";
 import CartContext from '../../context/CartContext';
 import "./style.scss";
 
@@ -10,6 +11,7 @@ const Button = ({buttonContent, buttonType, disabled, buttonInfo}) => {
       const {title, price, image, id} = buttonInfo
       const newItemToAdd = {title, price, image, id}
       addToCart(newItemToAdd);
+      toast.success("Added to Cart!");
     }
   }
   return (
