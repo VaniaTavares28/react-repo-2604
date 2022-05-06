@@ -22,34 +22,34 @@
   div {
     width: 100%;
     height: 50%;
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 900px) {
       width: 50%;
       height: 100%;
     }
   }
   .colored-section-content {
    @include flex-settings(column, center, flex-start);
-   padding: 1vh 6vw 1.5vh;
 
    h3 {
-     color: inherit;
-     font: $heading_font_3_high;
-     @include wrap-line(3);
-     @media screen and (min-width: 650px) {
+    color: inherit;
+    font: $heading_font_3_high;
+    @include wrap-line(3);
+    padding: 3.5vh 0 3.5vh 2.5vw;
+    @media screen and (min-width: 900px) {
       font: $heading_font_2_high;
     }
    }
    p {
-     color: inherit;
-     font: $body_font_2_high;
-     padding: 3vh 0;
-     margin-bottom: 2vh;
-     overflow-wrap: break-word;
-     @media screen and (min-width: 650px) {
+    color: inherit;
+    font: $body_font_2_high;
+    
+    overflow-wrap: break-word;
+    @media screen and (min-width: 900px) {
       font: $body_font_1_high;
+      padding: 218px 0 218px 139px;
     }
    }
-   }
+  }
  .colored-section-image {
    img {
      width: 100%;
@@ -58,8 +58,8 @@
    }
   }
 
-  @media screen and (min-width: 650px) {
-    height: 80vh;
+  @media screen and (min-width: 900px) {
+    height: 732px;
     @include flex-settings(row, stretch, stretch);
   }
 
