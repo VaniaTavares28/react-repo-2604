@@ -8,22 +8,18 @@
   flex-wrap: wrap;
   padding: 0 3.5vw;
 
-  .lg {
+  .lg, .xl{
     width: 251px;
     height: 462px;
   }
-  .xl {
-    width: 300px;
-    height: 540px;
-  }
+
   .card-wrapper {
     position: relative;
     color: $color_rangitoto_black;
-    margin-block-end: 1vh;
     @include flex-settings(column, space-between, flex-start);
 
     h4 {
-      padding-top: 2vh;
+      padding-top: 5%;
       font: $heading_font_6;
       @include wrap-line(1);
     }
@@ -79,7 +75,7 @@
       }
     }
   }
-  @media screen and (min-width: 820px) {
+  @media screen and (min-width: 850px) {
     @include flex-settings(row, space-between, center);
     padding: 0 139px;
   }
