@@ -6,25 +6,25 @@
 
   @media screen and (min-width: 850px) {
     @include flex-settings(column, space-between, center);
-    padding: 2.5vh 5vw 1vh;
+    padding: 44px 85px 0 85px;
     
     .navigation-top {
       @include flex-settings(row, space-between, flex-start);
-        width: 100vw;
-        padding: 0 2vw;
+        width: 100%;
   
         h2 {
           color: $color_forest_green;
           font: $heading_somantic;
           @include letter-dist(1.6px);
         }
-        .navigation-image-container {
-          width: 15px;
-          height: 15px;
-          .navigation-image {
-            object-fit: cover;
+        .navigation-image {
+          width: 8px;
+          height: 8px;
+          align-self: baseline;
+          img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
           }
         }
   
@@ -37,21 +37,22 @@
           justify-content: inherit;
           align-items: center;
         }
-        .navigation-right {
-          @include flex-settings(row, space-around, center);
-          width: 20%;
-          ul {
-            width: 60%;
-            @include flex-settings(row, space-between, center);
-          }
-        }
       }
     .navigation-bottom {
-      @include flex-settings(row, space-between, center);
-          width: 50%;
-          padding-top: 2.5vh;
-          padding-bottom: 0.4vh;
-          @include letter-dist(0.8px);
+      @include flex-settings(row, space-between, flex-start);
+      width: 50%;
+      padding: 20px 0 15px;
+      @include letter-dist(0.8px);
+      li > a {
+        padding: 8px 15px 5px;
+        &:hover {
+          background-color: $color_athens_gray;
+        }
+        &:active {
+          background: none;
+          border-bottom: 5px solid $color_cape_brown;
+        }
+      }
     }
   }
 }

@@ -21,31 +21,27 @@ const Header = ({ openCart }) => {
             </li>
           </ul>
           <h2>sooth</h2>
-          <div className="navigation-right">
-            <div className="navigation-image-container">
-              <img
-                className="navigation-image"
-                src={images.magnifying}
-                alt="magnifying"
-              />
-            </div>
-            <ul>
-              <li>
-                {shoppedItems.length ? (
-                  <span onClick={openCart}>Cart</span>
-                ) : (
-                  <p>Cart</p>
-                )}
-              </li>
-              <li>
-                <a href=".">Login</a>
-              </li>
-            </ul>
-          </div>
+          <ul>
+            <li className="navigation-image">
+              <img src={images.magnifying} alt="magnifying" />
+            </li>
+            <li>
+              {shoppedItems.length ? (
+                <span onClick={openCart}>Cart</span>
+              ) : (
+                <p>Cart</p>
+              )}
+            </li>
+            <li>
+              <a href=".">Login</a>
+            </li>
+          </ul>
         </nav>
         <ul className="navigation-bottom">
           {subMenu.map((sub) => (
-            <li key={sub.id}>{sub.title}</li>
+            <li key={sub.id}>
+              <a href=".">{sub.title}</a>
+            </li>
           ))}
         </ul>
       </div>
@@ -91,7 +87,9 @@ const Header = ({ openCart }) => {
               <a href=".">Consultation</a>
             </li>
             {subMenu.map((sub) => (
-              <li key={sub.id + "m969"}>{sub.title}</li>
+              <li key={sub.id + "m969"}>
+                <a href=".">{sub.title}</a>
+              </li>
             ))}
             <li>
               <a href=".">Login</a>
