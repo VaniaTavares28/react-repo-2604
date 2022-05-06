@@ -20,7 +20,7 @@ return (
     {overlay && <img src={overlay} alt="overlay" className="img-overlay" />}
     <img src={image} alt={title} />
     <h4>{title}</h4>
-    <p>
+    <p className={size === "xl" ? "p-xl" : ""}>
       {description
         ? description
         : content

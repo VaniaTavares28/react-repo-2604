@@ -5,6 +5,7 @@
   width: 100%;
   @include flex-settings(row, space-around, center);
   flex-wrap: wrap;
+  gap: 15px;
 
   .lg {
     width: 251px;
@@ -16,8 +17,8 @@
   }
   .card-wrapper {
     position: relative;
-    margin-bottom: 3vh;
     color: $color_rangitoto_black;
+    margin-block-end: 1vh;
     @include flex-settings(column, space-between, flex-start);
 
     h4 {
@@ -27,7 +28,6 @@
     }
     p {
       font: $body_font_3_high;
-      text-transform: lowercase;
       @include wrap-line(1);
     }
     img {
@@ -48,6 +48,9 @@
         opacity: 1;
         transition: opacity 0.4s ease-in-out;
       }
+    }
+    .p-xl {
+      text-transform: lowercase;
     }
     .extras-container {
       @include flex-settings(row, flex-start, center);
