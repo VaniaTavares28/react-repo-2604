@@ -1,11 +1,12 @@
 @mixin section-wrapper($font, $border-color) {
-  height: 141px;
+  height: max-content;
   color: $color_oxford_blue;
   border: 1px solid $border-color;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 3vh 2vw;
   h3 {
     font: $heading_font_4;
   }
@@ -30,4 +31,15 @@
   color: $color;
   background-color: $bg-color;
   border: 1px solid $border-color;
+}
+
+@mixin letter-dist($space) {
+  letter-spacing: $space;
+}
+
+@mixin wrap-line($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
 }

@@ -1,7 +1,10 @@
 import instagram from "./001-instagram-2.png"
 import magnifying from "./glass.png";
 import homeFlask from './home-image.png';
-import baseHome from './updated_Header-1.png'
+import baseHome from './updated_Header-1.png';
+import manInBlue from './man-flower.png';
+import armWithTattoo from './sincerely-media-CjHJbp-1.png';
+import menu from './menu.png';
 
 import acneCreamBottom from './Cream-2.png';
 import orangeBalm from "./person-holding-a-hand-cream-3059398 (1).png";
@@ -21,70 +24,82 @@ export const images = {
 instagram,
 magnifying,
 homeFlask,
-baseHome
+baseHome,
+manInBlue,
+armWithTattoo,
+menu
 }
 
 export const cardImages = [
   {
     id: "img001",
-    source: acneCreamBottom,
+    image: acneCreamBottom,
     overlay: orangeBalm,
-    caption: "Acne Cream",
-    category: ["most popular"]
+    title: "Acne Cream",
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img002",
-    source: vitiligioSolution,
+    image: vitiligioSolution,
     overlay: upperLeftFace,
-    caption: "Vitiligio Solution",
+    title: "Vitiligio Solution",
     type: "new",
     text: "New!",
-    category: ["most popular"]
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img003",
-    source: ezcemaCream,
-    caption: "Ezcema Cream",
-    category: ["most popular"]
+    image: ezcemaCream,
+    title: "Ezcema Cream",
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img006",
-    source: ezcemaCreamSpecial,
+    image: ezcemaCreamSpecial,
     overlay: applyCream,
-    caption: "Ezcema Cream",
-    category: ["most popular", "special"]
+    title: "Ezcema Cream",
+    category: ["most popular", "special"],
+    price: 24.99,
   },
   {
     id: "img005",
-    source: sunOintment,
+    image: sunOintment,
     overlay: applyBlueCream,
-    caption: "Sunburn Ointment",
+    title: "Sunburn Ointment",
     text: "15% off",
     type: "discount",
-    category: ["all"]
+    category: ["all"],
+    price: 24.99,
   },
   {
     id: "img006",
-    source: psoriasisCream,
-    caption: "Psoriasis Cream",
-    category: ["all"]
+    image: psoriasisCream,
+    title: "Psoriasis Cream",
+    category: ["all"],
+    price: 24.99,
   },
   {
     id: "img007",
-    source: vitBalm,
-    caption: "Vitiligio Balm",
-    category: ["regular"]
+    image: vitBalm,
+    title: "Vitiligio Balm",
+    category: ["regular"],
+    price: 24.99,
   },
   {
     id: "img008",
-    source: bigAcneCream,
-    caption: "Acne Cream",
-    category: ["regular"]
+    image: bigAcneCream,
+    title: "Acne Cream",
+    category: ["regular"],
+    price: 24.99,
   },
   {
     id: "img009",
-    source: ezcemaOil,
-    caption: "Ezcema Oil",
-    category: ["regular"]
+    image: ezcemaOil,
+    title: "Ezcema Oil",
+    category: ["regular"],
+    price: 24.99,
   },
-]
+];
