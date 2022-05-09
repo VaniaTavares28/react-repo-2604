@@ -3,8 +3,10 @@
 
 .cards-header {
   @include flex-settings(row, space-between, flex-start);
-  padding: 0 2.5vw 29px;
-  @media screen and (min-width: 820px) {
-    padding: 0 130px 29px 139px;
+  width: clamp(200px, 90vw,1100px);
+  padding-bottom: 29px;
+  margin: 0 auto;
+  h2 {
+    font: $heading_font_6;
   }
 }

@@ -2,15 +2,18 @@
 @import "../../assets/scss/mixins.scss";
 
 .cards-container {
-  width: 100%;
-  @include flex-settings(row, center, center);
-  gap: 28px;
-  flex-wrap: wrap;
-  padding: 0 3.5vw;
+  display: grid;
+  grid-template-columns: repeat(1, 251px);
+  column-gap: 10px;
+  row-gap: 93px;
+  margin: 0 auto;
+  width: max-content;
 
-  .lg, .xl{
-    width: 251px;
-    height: 462px;
+  .lg {
+    grid-template-rows: 462px;
+  }
+  .xl {
+    grid-template-rows: 470px;
   }
 
   .card-wrapper {
@@ -75,8 +78,16 @@
       }
     }
   }
+  @media screen and (min-width: 550px) {
+    grid-template-columns: repeat(2, 251px);
+    column-gap: 10px;
+  }
   @media screen and (min-width: 850px) {
-    @include flex-settings(row, space-between, center);
-    padding: 0 139px;
+    grid-template-columns: repeat(3, 251px);
+    column-gap: 15px;
+  }
+  @media screen and (min-width: 1150px) {
+    grid-template-columns: repeat(4, 251px);
+    column-gap: 28px;
   }
 }

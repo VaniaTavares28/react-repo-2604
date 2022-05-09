@@ -13,16 +13,17 @@ const CartCard = ({ cartItem, editCart }) => {
 
   const decreaseQuantity = () => {
     const newQuantity = quantity - 1;
-    if (newQuantity === 1) {
+    newQuantity === 1 &&
       toast.warning("Removing the remaing item, will remove it from cart");
-    }
     updateQuantity({ id, quantity: newQuantity });
   };
 
   const handleChange = ({ target }) => {
-    if (target.value === 1) {
-      toast.warning("Removing the remaing item, will remove it from cart");
+    if (target.value < 1) {
+      updateQuantity({ id, quantity: 1 });
     }
+   target.value === 1 &&
+     toast.warning("Removing the remaing item, will remove it from cart");
     updateQuantity({ id, quantity: target.value });
   };
 

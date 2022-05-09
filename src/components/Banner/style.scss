@@ -2,12 +2,15 @@
 @import "../../assets/scss/mixins.scss";
 
 .banner-wrapper {
-  width: 100vw;
+  position: sticky;
+  top: 0;
+  width: 100%;
   min-height: 40px;
   padding: 10px 5vw;
   color: $color_beige;
   background-color: $color_cape_brown;
   @include flex-settings(row, center, center);
+  z-index: 15;
   h4 {
     font: $body_font_1_500;
     color: inherit;

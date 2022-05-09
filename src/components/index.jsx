@@ -9,3 +9,7 @@ export { default as Header } from './Header';
 export { default as Highlight } from './HighlightBanner';
 export { default as LandingContent } from './LandingContent';
 export { default as SectionTitle } from './SectionTitle'
+
+// Layout
+
+export { default as Navigation } from "./layout/Navigation"

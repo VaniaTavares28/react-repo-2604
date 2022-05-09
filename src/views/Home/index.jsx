@@ -9,6 +9,7 @@ import {
   ColoredSection,
   Header,
   LandingContent,
+  Navigation,
   SectionTitle,
 } from "../../components";
 import "./style.scss";
@@ -61,7 +62,8 @@ const Home = () => {
     <>
       {showCart && <Cart closeCart={closeCart} />}
       <Banner />
-      <div className="header-container">
+      <Navigation openCart={openCart} />
+      <section className="header-container">
         <Header openCart={openCart} />
         <LandingContent
           button={true}
@@ -69,27 +71,27 @@ const Home = () => {
           title={titles.landing}
           content={content}
         />
-      </div>
+      </section>
       <SectionTitle
         borderLow="border-low"
         title={titles.solutions}
         content="Explore our innovative skincare products"
       />
-      <div className="card-section-container-1">
+      <section className="card-section-container-1">
         <CardsHeader cardsHeader="Most Popular" />
         <Cards
           content={cardImages}
           size="lg"
           filter={(card) => card.hasOwnProperty("overlay")}
         />
-      </div>
+      </section>
       <ColoredSection
         title={titles.como_green}
         text={coloredContent}
         image={images.manInBlue}
         color="como_green"
       />
-      <div className="card-section-container-2">
+      <section className="card-section-container-2">
         <CardsHeader cardsHeader="Top Rated" />
         {storeLoading ? (
           <div>
@@ -108,7 +110,7 @@ const Home = () => {
             }
           />
         )}
-      </div>
+      </section>
       <ColoredSection
         title={titles.silver_rust}
         text={coloredContent}

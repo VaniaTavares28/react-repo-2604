@@ -1,42 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { images } from '../../assets/images';
-import CartContext from '../../context/CartContext';
-import { subMenu } from '../../helpers/constants';
+import React, { useState } from "react";
+import { images } from "../../assets/images";
+import { subMenu } from "../../helpers/constants";
 import "./style.scss";
 
 const Header = ({ openCart }) => {
-  const { shoppedItems } = useContext(CartContext);
   const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
-      <div className="navigation-wrapper">
-        <nav className="navigation-top">
-          <ul>
-            <li>
-              <a href=".">About</a>
-            </li>
-            <li>
-              <a href=".">Consultation</a>
-            </li>
-          </ul>
-          <h2>sooth</h2>
-          <ul>
-            <li className="navigation-image">
-              <img src={images.magnifying} alt="magnifying" />
-            </li>
-            <li>
-              {shoppedItems.length ? (
-                <span onClick={openCart}>Cart</span>
-              ) : (
-                <p>Cart</p>
-              )}
-            </li>
-            <li>
-              <a href=".">Login</a>
-            </li>
-          </ul>
-        </nav>
+      <header className="navigation-wrapper">
         <ul className="navigation-bottom">
           {subMenu.map((sub) => (
             <li key={sub.id}>
@@ -44,7 +16,7 @@ const Header = ({ openCart }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </header>
       <div className="navigation-wrapper-mobile">
         <div>
           <div
@@ -65,11 +37,7 @@ const Header = ({ openCart }) => {
           </div>
           <ul>
             <li>
-              {shoppedItems.length ? (
-                <span onClick={openCart}>Cart</span>
-              ) : (
-                <p>Cart</p>
-              )}
+              <span onClick={openCart}>Cart</span>
             </li>
           </ul>
         </div>
@@ -101,4 +69,4 @@ const Header = ({ openCart }) => {
   );
 };
 
-export default Header
+export default Header;
