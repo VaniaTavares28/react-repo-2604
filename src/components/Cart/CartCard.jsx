@@ -12,19 +12,18 @@ const CartCard = ({ cartItem, editCart }) => {
   };
 
   const decreaseQuantity = () => {
-    const newQuantity = quantity - 1;
+    const newQuantity = quantity > 0 ? quantity - 1 : 1;
     newQuantity === 1 &&
       toast.warning("Removing the remaing item, will remove it from cart");
     updateQuantity({ id, quantity: newQuantity });
   };
 
   const handleChange = ({ target }) => {
-    if (target.value < 1) {
-      updateQuantity({ id, quantity: 1 });
+    if (target.value > 0) {
+      target.value === 1 &&
+        toast.warning("Removing the remaing item, will remove it from cart");
+      updateQuantity({ id, quantity: target.value });
     }
-   target.value === 1 &&
-     toast.warning("Removing the remaing item, will remove it from cart");
-    updateQuantity({ id, quantity: target.value });
   };
 
   const handleRemove = () => {
@@ -52,7 +51,7 @@ const CartCard = ({ cartItem, editCart }) => {
             <input
               value={quantity}
               type="number"
-              min="0"
+              range={0 - 100}
               onChange={handleChange}
             />
             <button onClick={increaseQuantity} className="btn">
