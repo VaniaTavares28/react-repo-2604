@@ -1,0 +1,116 @@
+@import "../../../assets/scss/variables.scss";
+@import "../../../assets/scss/mixins.scss";
+
+.footer-container {
+  width: 100vw;
+}
+
+.footer-top {
+  border: 1px solid $color_oxford_blue;
+  @include flex-settings(column, space-between, center);
+  padding: 35px 144px;
+  color: $color_oxford_blue;
+
+  .footer-top-content {
+    @include flex-settings(column, space-between, center);
+
+    h4 {
+      font: $heading_font_3;
+    }
+    p {
+      font: $body_font_1;
+      padding: 36px 0 0 0;
+      margin: 36px 0 0 0;
+      border-top: 1px solid $color_mischka_lavender;
+      border-left: none;
+      @media screen and (min-width: 550px) {
+        padding: 0 0 0 36px;
+        margin: 0 0 0 36px;
+        border-left: 1px solid $color_mischka_lavender;
+        border-top: none;
+      }
+    }
+    @media screen and (min-width: 550px) {
+      @include flex-settings(row, space-between, center);
+    }
+  }
+  @media screen and (min-width: 550px) {
+   @include flex-settings(row, space-between, center);
+  }
+}
+
+.footer-middle {
+  @include flex-settings(column-reverse, space-between, center);
+  padding: 200px 139px;
+  color: $color_white;
+
+  .footer-middle-left {
+    @include flex-settings(column, flex-start, flex-start);
+    h3 {
+      font: $heading_somantic_2;
+      @include letter-dist(2.7px)
+    }
+    p {
+      font: $body_font_1;
+      height: 40px;
+      padding: 15px 0 36px;
+    }
+  }
+  .footer-middle-right {
+    @include flex-settings(row, space-between, flex-start);
+    flex-wrap: wrap;
+    width: 100vw;
+
+    article {
+      h5 {
+        font: $body_font_1_500;
+        text-transform: uppercase;
+      }
+    }
+    @media screen and (min-width: 550px) {
+      width: 50%;
+  }
+  }
+  @media screen and (min-width: 550px) {
+   @include flex-settings(row, space-between, center);
+  }
+}
+
+.footer-form-brown, .footer-form-white {
+  @include flex-settings(row, stretch, center);
+  height: 40px;
+  color: $color_white;
+
+  input {
+    width: 282px;
+    height: 100%;
+    background: none;
+  }
+  .submit-btn {
+    width: 117px;
+    height: 100%;
+    color: inherit;
+  }
+}
+
+.footer-form-brown {
+  width: 399px;
+  input {
+    border: 1px solid $color_brown;
+  }
+  .submit-btn {
+    background-color: $color_cape_brown;
+    font-weight: 600;
+    order: -10;
+     @media screen and (min-width: 550px) {
+      order: 10;
+    }
+  }
+  }
+
+.footer-form-white {
+  width: 369px;
+  input {
+    border: 1px solid $color_white;
+  }
+}

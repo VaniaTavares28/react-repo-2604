@@ -7,6 +7,7 @@ import {
   CardsHeader,
   Cart,
   ColoredSection,
+  Footer,
   Header,
   LandingContent,
   SectionTitle,
@@ -116,6 +117,7 @@ const Home = () => {
         color="silver_rust"
         reverse
       />
+      <Footer />
     </>
   );
 };
