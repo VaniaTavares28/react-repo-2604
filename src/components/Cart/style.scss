@@ -13,11 +13,13 @@
  
   span {
     position: absolute;
-    font: $body_font_1_600;
+    font: $body_font_3_600;
     top: 2vh;
     right: 2vw;
-    background-color: $color_silver;
-    padding: 0.5vh 0.5vw;
+    @media screen and (min-width: 439px) {
+    top: 42px;
+    right: 31px;
+  }
   }
 
   p {
@@ -43,13 +45,16 @@
       padding-bottom: 0.5vh;
     }
     p {
-      padding: 0 0.5vw;
+      padding: 0 1vw;
+      @media screen and (min-width: 439px) {
+        padding: 0 7.5px;
+      }
     }
   }
 
   .cart-card {
     @include flex-settings(row, flex-start, stretch);
-    height: 100px;
+    height: 125px;
     margin-bottom: 1vh;
   
     div {
@@ -62,18 +67,28 @@
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         background-color: $color_white;
+      }
+      @media screen and (min-width: 439px) {
+        width: 144px;
+        height: 125px;
       }
     }
 
     .cart-card-content {
       @include flex-settings(column, center, center);
+      width: 60%;
+      padding: 0 4vw;
       
       h5 {
-        font: $heading_font_6;
+        font: $body_font_3_600;
         overflow-wrap: break-word;
         padding-bottom: 1vh;
+        @media screen and (min-width: 439px) {
+          padding-bottom: 6px;
+          font: $heading_font_6;
+        }
       }
       
       .edit-cart {
@@ -109,33 +124,44 @@
         position: absolute;
         right: 0.5vw;
       }
+      }
+      @media screen and (min-width: 439px) {
+      width: 215px;
+      padding: 0 25px;
+      }
     }
+
+    @media screen and (min-width: 439px) {
+    width: 359px;
+    margin-bottom: 12px;
     }
   }
 
-  .total-info, .total-sum {
+  .total-info {
     @include flex-settings(row, space-between, center);
-    padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
+    @media screen and (min-width: 439px) {
+      padding-top: 12px;
+    }
   }
 
   .total-sum {
+    @include flex-settings(row, space-between, center);
     border-top: 1.5px solid $color_oxford_blue;
     padding-top: 3vh;
+    margin: 3vh 0;
     h4 {
       font: $heading_font_7;
     }
+    @media screen and (min-width: 439px) {
+    padding-top: 14px;
+    margin: 17px 0;
+    }
   }
 
-  @media screen and (min-width: 600px) {
-    width: 50vw;
-    padding: 7vh 4vw 2.5vh;
-    top: 0;
-    right: 0;
-  }
-
-  @media screen and (min-width: 900px) {
-    width: 35vw;
-    padding: 7vh 4vw 2.5vh;
+  @media screen and (min-width: 439px) {
+    width: 439px;
+    padding: 37px 40px 0;
     top: 0;
     right: 0;
   }
