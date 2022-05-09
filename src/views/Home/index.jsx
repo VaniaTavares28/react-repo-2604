@@ -58,12 +58,13 @@ const Home = () => {
     storeRequest();
   }, []);
 
+  console.count("mounted");
   return (
     <>
       {showCart && <Cart closeCart={closeCart} />}
       <Banner />
-      <Navigation openCart={openCart} />
       <section className="header-container">
+        <Navigation openCart={openCart} />
         <Header openCart={openCart} />
         <LandingContent
           button={true}
