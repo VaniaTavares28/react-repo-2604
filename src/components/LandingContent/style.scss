@@ -2,38 +2,59 @@
 @import "../../assets/scss/mixins.scss";
 
 .landing {
-  padding: 20px 53px 0 53px;
+  padding: 3vh 0 1.5vh;
   height: max-content;
-  width: 100%;
-  @include flex-settings(row, flex-start, flex-start);
+  width: 100vw;
+  @include flex-settings(row, center, center);
 
   .landing-content {
     height: 100%;
-    padding: 79px 15px 10px 0;
-    @include flex-settings(column, space-around, flex-start);
+    width: 80%;
+    @include flex-settings(column, space-between, flex-start);
     h2 {
-      font: $heading_font_1;
-      padding: 14px 0;
+      font: $heading_font_3;
+      overflow-wrap: break-word;
+      padding: 1vh 0;
+
+      @media screen and (min-width: 600px) {
+        font: $heading_font_1;
+      }
     }
     p {
-      width: 395px;
-      margin-bottom: 28px;
-      font: $body_font_1_high;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+      width: 60%;
+      margin-bottom: 2.5vh;
+      font: $body_font_3_high;
+      overflow-wrap: break-word;
+
+      @media screen and (min-width: 600px) {
+        font: $body_font_1_high;
+      }
+      @media screen and (min-width: 950px) {
+        width: 85%;
+      }
+    }
+    @media screen and (min-width: 950px) {
+      padding: 2.5vh 0;
+      width: 50%;
     }
   }
   
-  .image-container {
-    height: 427px;
-    width: 427px;
-    align-self: center;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+  .landing-image-container {
+    display: none;
+    @media screen and (min-width: 950px) {
+      display: block;
+      min-height: 350px;
+      min-width: 350px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
+  }
+
+  @media screen and (min-width: 950px) {
+    padding: 3vh 10vw 1.5vh;
+    @include flex-settings(row, space-around, flex-start);
   }
 }

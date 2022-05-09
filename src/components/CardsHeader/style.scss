@@ -3,5 +3,5 @@
 
 .cards-header {
   @include flex-settings(row, space-between, flex-start);
-  padding-bottom: 29px;
+  padding-bottom: 5vh;
 }

@@ -2,58 +2,153 @@
 @import "../../assets/scss/mixins.scss";
 
 .navigation-wrapper {
-  @include flex-settings(column, space-between, center);
+  display: none;
 
-  .navigation-bottom, .navigation-top ul {
-    list-style: none;
-    }
+  @media screen and (min-width: 850px) {
+    @include flex-settings(column, space-between, center);
+    padding: 2.5vh 5vw 1vh;
+    
+    .navigation-top {
+      @include flex-settings(row, space-between, flex-start);
+        width: 100vw;
+        padding: 0 2vw;
   
-  .navigation-top {
-    @include flex-settings(row, space-between, flex-start);
-      width: 100%;
-
-      h2 {
-        color: $color_forest_green;
-        font: $heading_somantic;
-        @include letter-dist(1.6px);
-      }
-      .navigation-image-container {
-        width: 15px;
-        height: 15px;
-        .navigation-image {
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
+        h2 {
+          color: $color_forest_green;
+          font: $heading_somantic;
+          @include letter-dist(1.6px);
         }
-      }
-
-      ul {
-        width: 20%;
-        font: $body_font_3_600;
-        text-transform: uppercase;
-        display: inherit;
-        flex-direction: inherit;
-        justify-content: inherit;
-        align-items: center;
-        li > a {
-          text-decoration: none;
-          color: inherit;
+        .navigation-image-container {
+          width: 15px;
+          height: 15px;
+          .navigation-image {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
         }
-      }
-      .navigation-right {
-        @include flex-settings(row, space-around, center);
-        width: 20%;
+  
         ul {
-          width: 60%;
-          @include flex-settings(row, space-between, center);
+          width: 20%;
+          font: $body_font_3_600;
+          text-transform: uppercase;
+          display: inherit;
+          flex-direction: inherit;
+          justify-content: inherit;
+          align-items: center;
         }
+        .navigation-right {
+          @include flex-settings(row, space-around, center);
+          width: 20%;
+          ul {
+            width: 60%;
+            @include flex-settings(row, space-between, center);
+          }
+        }
+      }
+    .navigation-bottom {
+      @include flex-settings(row, space-between, center);
+          width: 50%;
+          padding-top: 2.5vh;
+          padding-bottom: 0.4vh;
+          @include letter-dist(0.8px);
+    }
+  }
+}
+
+.navigation-wrapper-mobile {
+  @include flex-settings(row, space-between, center);
+  padding: 2vh 4vw 1vh;
+
+  div {
+    @include flex-settings(row, flex-start, center);
+
+    h2 {
+      color: $color_forest_green;
+      font: $heading_somantic;
+      padding-inline-start: 2vw;
+      @include letter-dist(1.6px);
+    }
+
+    ul {
+      margin-inline-start: 1vw;
+      li > a {
+        font: $heading_font_5;
       }
     }
-  .navigation-bottom {
-    @include flex-settings(row, space-between, center);
-        width: 50%;
-        padding-top: 28px;
-        padding-bottom: 1px;
-        @include letter-dist(0.8px);
+
+    .navigation-image-container {
+      width: 20px;
+      height: 20px;
+      border: none;
+      background: none;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 850px) {
+    display: none;
+  }
+}
+
+.navigation-toggle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  @include flex-settings(column, flex-end, center);
+  padding: 5vh 5vw;
+  background-color: $color_alabaster;
+  z-index: 30;
+  ul {
+    margin-bottom: 10vh;
+
+    li, li > a {
+      margin-inline-start: 0;
+      text-decoration: none;
+      color: $color_forest_green;
+      font: $heading_font_5;
+      padding: 1vh 0;
+      @media screen and (min-width: 450px) {
+        margin-inline-start: 1vw;
+        font: $heading_font_6;
+      }
+    }
+  }
+
+  .btn-absolute {
+    @include custom-buttons(40px, 40px, $color_forest_green, transparent, transparent);
+    font-weight: 900;
+    border-radius: 50%;
+    margin-bottom: 2vh;
+    order: 10;
+    align-self: center;
+
+    &:hover {
+      background-color: $color_black_low_opacity;
+    }
+
+    @media screen and (min-width: 450px) {
+      align-self: flex-end;
+      order: -10;
+    }
+  }
+
+  @media screen and (min-width: 450px) {
+    @include flex-settings(column, flex-start, flex-start);
+    width: 45vw;
+  }
+
+  @media screen and (min-width: 650px) {
+    width: 35vw;
+  }
+  
+  @media screen and (min-width: 850px) {
+    display: none;
   }
 }

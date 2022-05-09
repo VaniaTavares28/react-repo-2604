@@ -2,5 +2,7 @@
 @import "../../assets/scss/mixins.scss";
 
 .section-title-wrapper {
-  @include section-wrapper($body_font_1, $color_como_green)
+  @include section-wrapper($body_font_1, $color_como_green);
+  text-align: center;
+  overflow-wrap: break-word;
 }

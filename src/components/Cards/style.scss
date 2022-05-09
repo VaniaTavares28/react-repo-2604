@@ -2,40 +2,40 @@
 @import "../../assets/scss/mixins.scss";
 
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  column-gap: 15px;
-  row-gap: 90px;
+  @include flex-settings(row, space-around, center);
+  flex-wrap: wrap;
+  gap: 15px;
 
   .lg {
     width: 251px;
     height: 462px;
   }
   .xl {
-    width: 251px;
-    height: 660px;
+    width: 300px;
+    height: 540px;
   }
   .card-wrapper {
     position: relative;
     color: $color_rangitoto_black;
+    margin-block-end: 1vh;
     @include flex-settings(column, space-between, flex-start);
 
     h4 {
-      padding-top: 14px;
+      padding-top: 2vh;
       font: $heading_font_6;
+      @include wrap-line(1);
     }
     p {
       font: $body_font_3_high;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
+      @include wrap-line(1);
     }
     img {
       width: 100%;
       height: 70%;
       object-fit: cover;
+      background-color: $color_white;
+      border: 5px solid $color_silver;
     }
     .img-overlay {
       position: absolute;
@@ -49,9 +49,12 @@
         transition: opacity 0.4s ease-in-out;
       }
     }
+    .p-xl {
+      text-transform: lowercase;
+    }
     .extras-container {
       @include flex-settings(row, flex-start, center);
-      padding-top: 12px;
+      padding-top: 1.5vh;
       .card-extra-bold {
         font: $heading_font_6;
         text-decoration: underline;
@@ -62,16 +65,16 @@
       p{
         &:nth-child(2n) {
         text-decoration: line-through;
-        padding-inline-start: 7px;
+        padding-inline-start: 2.5vw;
         }
       }
     }
     .rating-container {
       @include flex-settings(row, flex-start, center);
-      padding-bottom: 6px;
+      padding-bottom: 2vh;
       p {
         font-weight: 700;
-        padding-inline-end: 10px;
+        padding-inline-end: 2vw;
       }
     }
   }

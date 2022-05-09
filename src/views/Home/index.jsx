@@ -1,99 +1,81 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios';
-import { cardImages } from '../../assets/images';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { cardImages, images } from "../../assets/images";
 import {
   Banner,
   Cards,
   CardsHeader,
   Cart,
-  Form,
+  ColoredSection,
   Header,
   LandingContent,
   SectionTitle,
 } from "../../components";
 import "./style.scss";
-import CartContext from "../../context/CartContext";
 import { toast } from "react-toastify";
 
 const content =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?";
+const coloredContent =
+  "A healthier you from the inside out. We’ve sourced the cleanest ingredients to create a line of clean skin care treatments that leave you feeling your best";
+const titles = {
+  landing: "Skin Remedies.",
+  solutions: "Solutions for all skin",
+  como_green: "Clean products that deliver better solutions",
+  silver_rust: "All Natural Ingredients",
+};
+
 const Home = () => {
-  const { shoppedItems, showCart } = useContext(CartContext);
   const [storeContent, setStoreContent] = useState([]);
   const [storeLoading, setStoreLoading] = useState(false);
   const [storeError, setStoreError] = useState(false);
-  const [showForm, setShowForm] = useState(true);
-  const [userLoggedIn, setUserLoggedIn] = useState("");
-  const [category, setCategory] = useState("login");
-
-  const handleLogIn = () => {
-    if (userLoggedIn.length) {
-      localStorage.removeItem("loggedIn");
-      localStorage.removeItem("users");
-      setUserLoggedIn("");
-      toast.success("Successfully logged out!");
-    } else {
-    }
+  const [showCart, setShowCart] = useState(false);
+  const closeCart = () => {
+    setShowCart(false);
   };
-  useEffect(() => {
-    const storedLogIn = localStorage.getItem("loggedIn");
-    if (storedLogIn) {
-      setUserLoggedIn(`${storedLogIn}'s Cart`);
-    }
-  }, []);
+
+  const openCart = () => {
+    setShowCart(true);
+  };
 
   useEffect(() => {
-    const controller = new AbortController();
-    if (!storeContent.length) {
-      const storeRequest = async () => {
-        setStoreLoading(true);
-        try {
-          const res = await axios("https://fakestoreapi.com/products", {
-            signal: controller.signal,
-          });
+    const storeRequest = async () => {
+      setStoreLoading(true);
+      try {
+        const res = await axios.get("https://fakestoreapi.com/products");
 
-          if (res) {
-            setStoreContent(res.data);
-            setStoreLoading(false);
-            setStoreError(false);
-          }
-        } catch (error) {
-          setStoreError(true);
+        if (res?.data) {
+          setStoreContent(res.data);
           setStoreLoading(false);
         }
-      };
-      storeRequest();
-    }
-
-    return () => controller.abort();
-  }, [storeContent]);
+      } catch (error) {
+        setStoreError(true);
+        setStoreLoading(false);
+        toast.error("Issues on retrieval");
+      }
+    };
+    storeRequest();
+  }, []);
 
   return (
     <>
-      {!userLoggedIn && showForm && (
-        <Form
-          category={category}
-          setCategory={setCategory}
-          setShowForm={setShowForm}
-        />
-      )}
-      {showCart && shoppedItems.length && <Cart />}
+      {showCart && <Cart closeCart={closeCart} />}
       <Banner />
       <div className="header-container">
-        <Header userLoggedIn={userLoggedIn} handleLogIn={handleLogIn} />
+        <Header openCart={openCart} />
         <LandingContent
           button={true}
           highlight={true}
-          title="Skin Remedies."
+          title={titles.landing}
           content={content}
         />
       </div>
       <SectionTitle
         borderLow="border-low"
-        title="Solutions for all skin"
+        title={titles.solutions}
         content="Explore our innovative skincare products"
       />
-      <div className="single-row-card-container">
+      <div className="card-section-container-1">
         <CardsHeader cardsHeader="Most Popular" />
         <Cards
           content={cardImages}
@@ -101,7 +83,13 @@ const Home = () => {
           filter={(card) => card.hasOwnProperty("overlay")}
         />
       </div>
-      <div className="single-row-card-container">
+      <ColoredSection
+        title={titles.como_green}
+        text={coloredContent}
+        image={images.manInBlue}
+        color="como_green"
+      />
+      <div className="card-section-container-2">
         <CardsHeader cardsHeader="Top Rated" />
         {storeLoading ? (
           <div>
@@ -121,6 +109,13 @@ const Home = () => {
           />
         )}
       </div>
+      <ColoredSection
+        title={titles.silver_rust}
+        text={coloredContent}
+        image={images.armWithTattoo}
+        color="silver_rust"
+        reverse
+      />
     </>
   );
 };

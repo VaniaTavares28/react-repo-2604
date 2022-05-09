@@ -3,7 +3,8 @@ import magnifying from "./glass.png";
 import homeFlask from './home-image.png';
 import baseHome from './updated_Header-1.png';
 import manInBlue from './man-flower.png';
-import armWithTattoo from './sincerely-media-CjHJbp-1.png'
+import armWithTattoo from './sincerely-media-CjHJbp-1.png';
+import menu from './menu.png';
 
 import acneCreamBottom from './Cream-2.png';
 import orangeBalm from "./person-holding-a-hand-cream-3059398 (1).png";
@@ -25,7 +26,8 @@ magnifying,
 homeFlask,
 baseHome,
 manInBlue,
-armWithTattoo
+armWithTattoo,
+menu
 }
 
 export const cardImages = [
@@ -34,7 +36,8 @@ export const cardImages = [
     image: acneCreamBottom,
     overlay: orangeBalm,
     title: "Acne Cream",
-    category: ["most popular"]
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img002",
@@ -43,20 +46,23 @@ export const cardImages = [
     title: "Vitiligio Solution",
     type: "new",
     text: "New!",
-    category: ["most popular"]
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img003",
     image: ezcemaCream,
     title: "Ezcema Cream",
-    category: ["most popular"]
+    category: ["most popular"],
+    price: 24.99,
   },
   {
     id: "img006",
     image: ezcemaCreamSpecial,
     overlay: applyCream,
     title: "Ezcema Cream",
-    category: ["most popular", "special"]
+    category: ["most popular", "special"],
+    price: 24.99,
   },
   {
     id: "img005",
@@ -65,30 +71,35 @@ export const cardImages = [
     title: "Sunburn Ointment",
     text: "15% off",
     type: "discount",
-    category: ["all"]
+    category: ["all"],
+    price: 24.99,
   },
   {
     id: "img006",
     image: psoriasisCream,
     title: "Psoriasis Cream",
-    category: ["all"]
+    category: ["all"],
+    price: 24.99,
   },
   {
     id: "img007",
     image: vitBalm,
     title: "Vitiligio Balm",
-    category: ["regular"]
+    category: ["regular"],
+    price: 24.99,
   },
   {
     id: "img008",
     image: bigAcneCream,
     title: "Acne Cream",
-    category: ["regular"]
+    category: ["regular"],
+    price: 24.99,
   },
   {
     id: "img009",
     image: ezcemaOil,
     title: "Ezcema Oil",
-    category: ["regular"]
+    category: ["regular"],
+    price: 24.99,
   },
-]
+];

@@ -6,8 +6,8 @@
   width: 100vw;
   height: 100vh;
   color: $color_oxford_blue;
-  background-color: $color_athens_gray_ligther;
-  padding: 75px 50px 45px;
+  background-color: $color_athens_gray_lighter;
+  padding: 7vh 8vw 5vh;
   @include flex-settings(column, flex-start, flex-start);
   z-index: 30;
  
@@ -57,12 +57,13 @@
     }
 
     .cart-card-image {
-      width: 125px;
-      height: inherit;
+      width: 40%;
+      height: 100%;
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        background-color: $color_white;
       }
     }
 
@@ -72,7 +73,7 @@
       h5 {
         font: $heading_font_6;
         overflow-wrap: break-word;
-        padding-bottom: 6px;
+        padding-bottom: 1vh;
       }
       
       .edit-cart {
@@ -81,11 +82,17 @@
         border: none;
         
         input {
-          width: $min_measure;
+          width: $measure;
           height: $min_measure;
-          padding: 5px;
           text-align: center;
           border: 0.5px solid $color_rangitoto_black;
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; 
         }
 
         .btn {
@@ -119,9 +126,16 @@
     }
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: 600px) {
+    width: 50vw;
+    padding: 7vh 4vw 2.5vh;
+    top: 0;
+    right: 0;
+  }
+
+  @media screen and (min-width: 900px) {
     width: 35vw;
-    padding: 75px 45px 45px;
+    padding: 7vh 4vw 2.5vh;
     top: 0;
     right: 0;
   }
