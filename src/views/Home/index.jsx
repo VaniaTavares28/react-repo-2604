@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { cardImages, images } from "../../assets/images";
+import { toast } from "react-toastify";
 import {
   Banner,
   Cards,
@@ -12,8 +12,8 @@ import {
   Navigation,
   SectionTitle,
 } from "../../components";
+import { cardImages, images } from "../../assets/images";
 import "./style.scss";
-import { toast } from "react-toastify";
 
 const content =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis officiis magnam similique voluptatem reprehenderit obcaecati?";

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import CartContext from "../../context/CartContext";
 import { toast } from "react-toastify";
+import CartContext from "../../context/CartContext";
 
 const CartCard = ({ cartItem, editCart }) => {
   const { updateQuantity, removeFromCart } = useContext(CartContext);

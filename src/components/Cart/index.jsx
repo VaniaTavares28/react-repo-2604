@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
-import { roundWithTwoDecimals } from "../../helpers/functions";
 import CartCard from "./CartCard";
+import { roundWithTwoDecimals } from "../../helpers/functions";
 import "./style.scss";
 
 const Cart = ({ closeCart }) => {
