@@ -13,14 +13,11 @@ const FooterInput = ({ styling }) => {
 
 const Footer = () => {
   return (
-    <div className="footer-container">
+    <footer className="footer-container">
       <div className="footer-top">
         <div className="footer-top-content">
           <h4>Join the Sooth family</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis
-            officiis magnam similique voluptatem?
-          </p>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
         <FooterInput styling="brown" />
       </div>
@@ -43,13 +40,15 @@ const Footer = () => {
       </div>
       <div className="footer-bottom">
         <h5>sooth all rights reserved</h5>
-        {footerContent.links.map((link) => (
-          <a id={link.id} href={link.linkRef}>
-            {link.text}
-          </a>
-        ))}
+        <div>
+          {footerContent.links.map((link) => (
+            <a id={link.id} href={link.linkRef}>
+              {link.text}
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
