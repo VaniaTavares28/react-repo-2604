@@ -4,18 +4,25 @@
 .footer-container {
   width: 100%;
   background-color: $color_oxford_blue;
+  
+  .footer-white {
+    background-color: $color_white;
+    border-top: 1px solid $color_oxford_blue;
+    border-bottom: 1px solid $color_oxford_blue;
+  }
 }
 
 .footer-top {
-  border: 1px solid $color_oxford_blue;
-  @include flex-settings(column, space-between, center);
-  padding: 35px 0 0 21px;
+  position: relative;
+  padding: 35px 0;
   margin: 0 auto;
+  max-width: 1000px;
+  @include flex-settings(column, space-between, center);
   color: $color_oxford_blue;
-  background-color: $color_white;
 
   .footer-top-content {
     @include flex-settings(column, space-between, center);
+    width: max-content;
 
     h4 {
       font: $heading_font_3;
@@ -26,7 +33,7 @@
       border-right: none;
       @include wrap-line(2);
 
-      @media screen and (min-width: 950px) {
+      @media screen and (min-width: 550px) {
         padding: 0 36px 0 0;
         margin: 0 36px 0 0;
         border-right: 1px solid $color_mischka_lavender;
@@ -35,17 +42,19 @@
     }
     p {
       font: $body_font_1;
-      max-width: 230px;
+      max-width: 250px;
       @media screen and (min-width: 950px) {
-      max-width: 304px;
+      max-width: 300px;
       }
     }
     @media screen and (min-width: 550px) {
       @include flex-settings(row, space-between, center);
     }
   }
+
   @media screen and (min-width: 950px) {
    @include flex-settings(row, space-between, center);
+   padding-bottom: 35px;
   }
 }
 
@@ -115,14 +124,34 @@
     font: inherit;
     padding-top: 20px;
     text-transform: uppercase;
-    margin-bottom: 18px;
   }
-  div {
+  section {
+    @include flex-settings(column, space-between, flex-start);
+
+    .footer-bottom-left {
     @include flex-settings(row, space-between, center);
-    max-width: 358px;
+    width: 100%;
+    flex-wrap: wrap;
     a {
+    margin: 18px 0;
     color: inherit;
     text-decoration: underline;
+    }
+    @media screen and (min-width: 550px) {
+      width: 358px;
+      }
+    }
+    .footer-bottom-right {
+      @include flex-settings(row, space-between, center);
+      width: max-content;
+      gap: 38px;
+      margin-top: 42px;
+      @media screen and (min-width: 950px) {
+      margin-top: 0;
+      }
+    }
+    @media screen and (min-width: 950px) {
+      @include flex-settings(row, space-between, center);
     }
   }
   @media screen and (min-width: 950px) {
@@ -174,7 +203,11 @@
       order: 10;
     }
   }
-    @media screen and (min-width: 950px) {
+    @media screen and (min-width: 550px) {
+      width: 399px;
+      margin: 40px auto;
+    }
+     @media screen and (min-width: 950px) {
       margin: 0
     }
   }
@@ -184,4 +217,7 @@
   input {
     border: 1px solid $color_white;
   }
+  @media screen and (min-width: 950px) {
+      width: 369px;
+    }
 }
