@@ -21,25 +21,28 @@ export const subMenu = [
   },
 ]
 
-export const inputFields = [
-  {
-    name: "username",
-    placeholder: "Kim",
-    category: ["register", "login"],
-    inputType: "text",
-  },
-  {
-    name: "email",
-    placeholder: "kim@examplemail.com",
-    category: ["register"],
-    inputType: "email",
-  },
-  {
-    name: "password",
-    category: ["register", "login"],
-    inputType: "password",
-  },
-];
+export const formInfo = {
+  login: "Continue",
+  register: "Create Account",
+  reset: "Update Password",
+  inputFields: [
+    {
+      name: "username",
+      category: ["register", "login"],
+      inputType: "text",
+    },
+    {
+      name: "email",
+      category: ["register", "reset"],
+      inputType: "email",
+    },
+    {
+      name: "password",
+      category: ["register", "login", "reset"],
+      inputType: "password",
+    },
+  ],
+};
 
 export const footerContent = {
   articles: [
@@ -104,7 +107,7 @@ export const footerContent = {
           text: "Lorem at al",
         },
         {
-          id: "fsa1-p03",
+          id: "fsa3-p03",
           text: "Veraotio",
         },
       ],
