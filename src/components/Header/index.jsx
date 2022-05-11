@@ -1,13 +1,24 @@
-import React, { useContext, useState } from 'react';
-import { images } from '../../assets/images';
-import CartContext from '../../context/CartContext';
-import { subMenu } from '../../helpers/constants';
+import React, { useContext, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { images } from "../../assets/images";
+import CartContext from "../../context/CartContext";
+import { subMenu } from "../../helpers/constants";
 import "./style.scss";
 
 const Header = ({ openCart }) => {
   const { shoppedItems } = useContext(CartContext);
   const [openMenu, setOpenMenu] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn) setIsLoggedIn(true);
+  }, []);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("loggedIn");
+    setIsLoggedIn(false);
+  };
   return (
     <>
       <div className="navigation-wrapper">
@@ -38,7 +49,11 @@ const Header = ({ openCart }) => {
                 )}
               </li>
               <li>
-                <a href=".">Login</a>
+                {isLoggedIn ? (
+                  <span onClick={handleLogOut}>Log out</span>
+                ) : (
+                  <NavLink to="/login">Login</NavLink>
+                )}
               </li>
             </ul>
           </div>
@@ -103,4 +118,4 @@ const Header = ({ openCart }) => {
   );
 };
 
-export default Header
+export default Header;

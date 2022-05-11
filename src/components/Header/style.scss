@@ -6,11 +6,11 @@
 
   @media screen and (min-width: 850px) {
     @include flex-settings(column, space-between, center);
-    padding: 2.5vh 5vw 1vh;
+    padding: 44px 5vw 1vh;
     
     .navigation-top {
       @include flex-settings(row, space-between, flex-start);
-        width: 100vw;
+        width: 100%;
         padding: 0 2vw;
   
         h2 {

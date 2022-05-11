@@ -1,29 +1,38 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { CartContextProvider } from './context/CartContext';
-import Home from "./views/Home";
+import { CartContextProvider } from "./context/CartContext";
+import { Home, Login, Register, ResetPassword } from "./views";
+import { Footer } from "./components";
 
-  import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
-  function App() {
-    return (
-      <>
-        <CartContextProvider>
-          <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
-          <Home />
-        </CartContextProvider>
-      </>
-    );
-  }
+function App() {
+  return (
+    <BrowserRouter>
+      <CartContextProvider>
+        <ToastContainer
+          position="top-center"
+          autoClose={2500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+        <Routes>
+          <Route path="/*" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reset" element={<ResetPassword />} />
+        </Routes>
+
+        <Footer />
+      </CartContextProvider>
+    </BrowserRouter>
+  );
+}
 
 export default App;
