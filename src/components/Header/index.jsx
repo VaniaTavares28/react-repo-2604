@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { images } from "../../assets/images";
 import { subMenu } from "../../helpers/constants";
 import "./style.scss";
 
 const Header = ({ openCart }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn) setIsLoggedIn(true);
+  }, []);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("loggedIn");
+    setIsLoggedIn(false);
+  };
 
   return (
     <>
@@ -60,7 +72,13 @@ const Header = ({ openCart }) => {
               </li>
             ))}
             <li>
-              <a href=".">Login</a>
+              <li>
+                {isLoggedIn ? (
+                  <span onClick={handleLogOut}>Log Out</span>
+                ) : (
+                  <NavLink to="/login">Login</NavLink>
+                )}
+              </li>
             </li>
           </ul>
         </div>

@@ -1,0 +1,60 @@
+@import '../../assets/scss/variables.scss';
+@import '../../assets/scss/mixins.scss';
+
+.form-container {
+  @include flex-settings(column, center, center);
+  padding: 79px 0;
+  margin: 0 auto;
+  width: max-content;
+
+  h1 {
+    font: $heading_font_9;
+    color: $color_oxford_blue;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+  }
+  .password-input input, input {
+    width: 250px;
+    height: 47px;
+    border: 1px solid $color_oxford_blue;
+    padding: 14px 23px;
+    margin-bottom: 10px;
+    font: $body_font_2;
+
+    &::placeholder {
+      color: $color_oxford_blue;
+      opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $color_oxford_blue;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: $color_oxford_blue;
+    }
+
+    @media screen and (min-width: 450px) {
+      width: 348px;
+    }
+  }
+  .password-input {
+      width: max-content;
+      height: max-content;
+      position: relative;
+    }
+    
+  .form-submit {
+      margin-top: 7px;
+      background-color: $color_oxford_blue;
+      color: white;
+      font: $body_font_2_600;
+    }
+
+  p {
+    align-self: flex-start;
+    a {
+    text-decoration: underline;
+    }
+  }
+
+}

@@ -20,3 +20,114 @@ export const subMenu = [
     title: "Vitiligio"
   },
 ]
+
+export const formInfo = {
+  login: "Continue",
+  register: "Create Account",
+  reset: "Update Password",
+  inputFields: [
+    {
+      name: "username",
+      category: ["register", "login"],
+      inputType: "text",
+    },
+    {
+      name: "email",
+      category: ["register", "reset"],
+      inputType: "email",
+    },
+    {
+      name: "password",
+      category: ["register", "login", "reset"],
+      inputType: "password",
+    },
+  ],
+};
+
+export const footerContent = {
+  articles: [
+    {
+      id: "fsa1",
+      title: "shop",
+      paragraphs: [
+        {
+          id: "fsa1-p01",
+          text: "Lorem ipsum",
+        },
+        {
+          id: "fsa1-p02",
+          text: "Dolar at",
+        },
+        {
+          id: "fsa1-p03",
+          text: "Veraotio",
+        },
+        {
+          id: "fsa1-p04",
+          text: "Lorem at al",
+        },
+      ],
+    },
+    {
+      id: "fsa2",
+      title: "about",
+      paragraphs: [
+        {
+          id: "fsa2-p01",
+          text: "About Us",
+        },
+        {
+          id: "fsa2-p02",
+          text: "Sooth Stories (Blog)",
+        },
+        {
+          id: "fsa2-p03",
+          text: "Contact Us",
+        },
+        {
+          id: "fsa2-p04",
+          text: "Learn more",
+        },
+        {
+          id: "fsa2-p05",
+          text: "Stores",
+        },
+      ],
+    },
+    {
+      id: "fsa3",
+      title: "more",
+      paragraphs: [
+        {
+          id: "fsa3-p01",
+          text: "Dolar at",
+        },
+        {
+          id: "fsa3-p02",
+          text: "Lorem at al",
+        },
+        {
+          id: "fsa3-p03",
+          text: "Veraotio",
+        },
+      ],
+    },
+  ],
+  links: [
+    {
+      id: "fl001",
+      text: "Privacy Policy",
+      linkRef: ".",
+    },
+    {
+      id: "fl002",
+      text: "Terms of Use",
+      linkRef: ".",
+    },
+    {
+      id: "fl003",
+      text: "Contact Us",
+      linkRef: ".",
+    },
+  ],
+};

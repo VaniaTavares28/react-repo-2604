@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { images } from "../../../assets/images";
 import "./style.scss";
 
 const Navigation = ({ openCart }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn) setIsLoggedIn(true);
+  }, []);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("loggedIn");
+    setIsLoggedIn(false);
+  };
+
   return (
     <nav className="navigation-top">
       <ul>
@@ -22,7 +35,11 @@ const Navigation = ({ openCart }) => {
           <span onClick={openCart}>Cart</span>
         </li>
         <li>
-          <a href=".">Login</a>
+          {isLoggedIn ? (
+            <span onClick={handleLogOut}>Log Out</span>
+          ) : (
+            <NavLink to="/login">Login</NavLink>
+          )}
         </li>
       </ul>
     </nav>

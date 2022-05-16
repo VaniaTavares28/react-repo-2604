@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import CartContext from "../../context/CartContext";
 import {
   Banner,
   Cards,
@@ -30,14 +31,7 @@ const Home = () => {
   const [storeContent, setStoreContent] = useState([]);
   const [storeLoading, setStoreLoading] = useState(false);
   const [storeError, setStoreError] = useState(false);
-  const [showCart, setShowCart] = useState(false);
-  const closeCart = () => {
-    setShowCart(false);
-  };
-
-  const openCart = () => {
-    setShowCart(true);
-  };
+  const { showCart, openCart, closeCart } = useContext(CartContext);
 
   useEffect(() => {
     const storeRequest = async () => {

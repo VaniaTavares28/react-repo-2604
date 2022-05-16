@@ -4,12 +4,13 @@ export { default as Button } from "./Button";
 export { default as Cards } from "./Cards";
 export { default as CardsHeader } from './CardsHeader';
 export { default as Cart } from './Cart';
+export { default as Form } from "./Form";
 export { default as ColoredSection } from './ColoredSection';
 export { default as Header } from './Header';
 export { default as Highlight } from './HighlightBanner';
 export { default as LandingContent } from './LandingContent';
-export { default as SectionTitle } from './SectionTitle'
+export { default as SectionTitle } from "./SectionTitle";
 
-// Layout
-
-export { default as Navigation } from "./layout/Navigation"
+/* Layout Sections */
+export { default as Navigation } from "./layout/Navigation";
+export { default as Footer } from "./layout/Footer";

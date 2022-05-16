@@ -5,6 +5,14 @@ const CartContext = createContext([]);
 export const CartContextProvider = ({ children }) => {
   const [shoppedItems, setShoppedItems] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+    const [showCart, setShowCart] = useState(false);
+    const closeCart = () => {
+      setShowCart(false);
+    };
+
+    const openCart = () => {
+      setShowCart(true);
+    };
 
   const addToCart = ({ title, price, image, id }) => {
     const foundItemIndex = shoppedItems.findIndex((cart) => cart.id === id);
@@ -76,9 +84,12 @@ export const CartContextProvider = ({ children }) => {
       value={{
         cartTotal,
         shoppedItems,
+        showCart,
         addToCart,
         updateQuantity,
         removeFromCart,
+        openCart,
+        closeCart,
       }}
     >
       {children}
