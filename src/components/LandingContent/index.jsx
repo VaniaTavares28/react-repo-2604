@@ -10,10 +10,10 @@ const LandingContent = ({button, title, content, highlight}) => {
     <div className="landing">
       <div className="landing-content">
         {highlight && <HighlightBanner text="New!" type="new" />}
-        <h2>
+        <h1>
           All Natural <br />
           {title}
-        </h2>
+        </h1>
         <p>{content}</p>
         {button && (
           <Button buttonContent="Shop products" buttonType="no-fill" />

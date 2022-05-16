@@ -4,14 +4,14 @@
 .landing {
   padding: 3vh 0 1.5vh;
   height: max-content;
-  width: 100vw;
+  width: 100%;
   @include flex-settings(row, center, center);
 
   .landing-content {
     height: 100%;
     width: 80%;
     @include flex-settings(column, space-between, flex-start);
-    h2 {
+    h1 {
       font: $heading_font_3;
       overflow-wrap: break-word;
       padding: 1vh 0;

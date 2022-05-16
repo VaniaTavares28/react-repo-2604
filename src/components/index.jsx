@@ -12,4 +12,5 @@ export { default as LandingContent } from './LandingContent';
 export { default as SectionTitle } from "./SectionTitle";
 
 /* Layout Sections */
+export { default as Navigation } from "./layout/Navigation";
 export { default as Footer } from "./layout/Footer";

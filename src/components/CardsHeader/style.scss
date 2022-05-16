@@ -3,5 +3,10 @@
 
 .cards-header {
   @include flex-settings(row, space-between, flex-start);
-  padding-bottom: 5vh;
+  width: clamp(200px, 90vw,1100px);
+  padding-bottom: 29px;
+  margin: 0 auto;
+  h2 {
+    font: $heading_font_6;
+  }
 }

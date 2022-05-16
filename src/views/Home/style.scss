@@ -2,22 +2,16 @@
 
 .header-container {
   color: $color_oxford_blue;
-  width: 100vw;
+  width: 100%;
   background-image: url("../../assets/images/updated_Header-1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.card-section-container-1, .card-section-container-2 {
-  padding: 3vh 5.5vw 6vh;
-  margin: 5vh 0;
+.card-section-container-1 {
+  padding: 82px 0 111px;
+}
 
-  @media screen and (min-width: 900px) {
-    padding: 3vh 4.5vw 6vh;
-  }
-
-  @media screen and (min-width: 1200px) {
-    padding: 3vh 6vw 6vh;
-  }
-
+.card-section-container-2 {
+  padding: 157px 0 163px;
 }

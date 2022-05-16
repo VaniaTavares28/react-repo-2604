@@ -2,27 +2,27 @@
 @import "../../assets/scss/mixins.scss";
 
 .cards-container {
-  width: 100%;
-  @include flex-settings(row, space-around, center);
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 251px);
+  column-gap: 10px;
+  row-gap: 93px;
+  margin: 0 auto;
+  width: max-content;
 
   .lg {
-    width: 251px;
-    height: 462px;
+    grid-template-rows: 462px;
   }
   .xl {
-    width: 300px;
-    height: 540px;
+    grid-template-rows: 470px;
   }
+
   .card-wrapper {
     position: relative;
     color: $color_rangitoto_black;
-    margin-block-end: 1vh;
     @include flex-settings(column, space-between, flex-start);
 
     h4 {
-      padding-top: 2vh;
+      padding-top: 5%;
       font: $heading_font_6;
       @include wrap-line(1);
     }
@@ -77,5 +77,17 @@
         padding-inline-end: 2vw;
       }
     }
+  }
+  @media screen and (min-width: 550px) {
+    grid-template-columns: repeat(2, 251px);
+    column-gap: 10px;
+  }
+  @media screen and (min-width: 850px) {
+    grid-template-columns: repeat(3, 251px);
+    column-gap: 15px;
+  }
+  @media screen and (min-width: 1150px) {
+    grid-template-columns: repeat(4, 251px);
+    column-gap: 28px;
   }
 }
