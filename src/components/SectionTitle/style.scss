@@ -1,8 +1,36 @@
 @import "../../assets/scss/variables.scss";
-@import "../../assets/scss/mixins.scss";
 
 .section-title-wrapper {
-  @include section-wrapper($body_font_1, $color_como_green);
+  width: 100%;
+  height: 141px;
+  color: $color_oxford_blue;
+  border-top: 1px solid $color_como_green;
+  border-bottom: 1px solid $color_como_green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   overflow-wrap: break-word;
+  padding: 0 2vw;
+
+  h3 {
+    font: $heading_font_4;
+    max-width: 364px;
+    @media screen and (min-width: 600px) {
+    width: 364px;
+  }
+  }
+  p {
+    font: $body_font_1;
+    max-width: 515px;
+    padding: 6px 0 30px;
+    @media screen and (min-width: 600px) {
+    width: 515px;
+  }
+  }
+
+  @media screen and (min-width: 600px) {
+    padding: 0;
+  }
 }

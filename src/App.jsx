@@ -1,6 +1,6 @@
 import './App.css';
 import { ToastContainer } from "react-toastify";
-import { CartContextProvider } from './context/CartContext';
+import { CartContextProvider } from "./context/CartContext";
 import Home from './views/Home';
 import "react-toastify/dist/ReactToastify.css";
 
